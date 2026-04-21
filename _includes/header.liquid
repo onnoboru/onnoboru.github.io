@@ -117,6 +117,16 @@
               {% endif %}
             {% endif %}
           {% endfor %}
+          {% if page.url == '/ja/' or page.url == '/ja' or page.url contains '/ja/' %}
+            {% assign language_switch_url = '/' %}
+            {% assign language_switch_label = 'EN' %}
+          {% else %}
+            {% assign language_switch_url = '/ja/' %}
+            {% assign language_switch_label = 'JA' %}
+          {% endif %}
+          <li class="nav-item">
+            <a class="nav-link" href="{{ language_switch_url | relative_url }}">{{ language_switch_label }}</a>
+          </li>
           {% if site.search_enabled %}
             <!-- Search -->
             <li class="nav-item">
