@@ -17,7 +17,7 @@ keywords: jekyll, jekyll-theme, academic-website, portfolio-website # add your o
 lang: [en , ja] # the language of your site (for example: en, fr, cn, ru, etc.)
 default_lang: en
 languages: [en, ja]
-icon: ⚛️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
+icon: shika2.jpg # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
 url: https://onnoboru.github.io # the base hostname & protocol for your site
 baseurl: # the subpath of your site, e.g. /blog/. Leave blank for root
