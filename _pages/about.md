@@ -9,9 +9,9 @@ profile:
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>555 your office number</p>
+    <!-- <p>555 your office number</p>
     <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+    <p>Your City, State 12345</p> --!>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
@@ -27,10 +27,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am an incoming undergraduate student. I worked as a research assistant at the Matsuo-Iwasawa Lab, The University of Tokyo, under Prof. Tatsuya Matsushima.
-
-
-
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
-
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+I am an incoming undergraduate student interested in robotics and machine learning.  
+I previously worked as a student research assistant at the Matsuo-Iwasawa Laboratory at the University of Tokyo under Professor Tatsuya Matsushima.  
+I am a two-time member of the Japan national team for the International Olympiad in Artificial Intelligence (IOAI), winning a silver medal in 2025 and a bronze medal in 2024.  
+My interests lie in building intelligent systems that can perceive the physical world and act reliably and smoothly.

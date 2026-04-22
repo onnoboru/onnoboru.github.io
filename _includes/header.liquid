@@ -2,28 +2,23 @@
   <!-- Nav Bar -->
   <nav id="navbar" class="navbar navbar-light navbar-expand-sm {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}" role="navigation">
     <div class="container">
-      {% if page.permalink != '/' %}
-        <a class="navbar-brand title font-weight-lighter" href="{{ site.baseurl }}/">
-          {% if site.title == 'blank' %}
-            {% if site.first_name %}
-              <span class="font-weight-bold">
-                {{- site.first_name -}}
-              </span>
-            {% endif %}
-            {% if site.middle_name %}
-              {{- site.middle_name -}}
-            {% endif %}
-            {% if site.last_name %}
-              {{- site.last_name -}}
-            {% endif %}
-          {% else %}
-            {{- site.title -}}
+      <a class="navbar-brand title font-weight-lighter" href="{{ site.baseurl }}/">
+        {% if site.title == 'blank' %}
+          {% if site.first_name %}
+            <span class="font-weight-bold">
+              {{- site.first_name -}}
+            </span>
           {% endif %}
-        </a>
-      {% elsif site.enable_navbar_social %}
-        <!-- Social Icons -->
-        <div class="navbar-brand social">{% social_links %}</div>
-      {% endif %}
+          {% if site.middle_name %}
+            {{- site.middle_name -}}
+          {% endif %}
+          {% if site.last_name %}
+            {{- site.last_name -}}
+          {% endif %}
+        {% else %}
+          {{- site.title -}}
+        {% endif %}
+      </a>
       <!-- Navbar Toggle -->
       <button
         class="navbar-toggler collapsed ml-auto"
@@ -42,15 +37,29 @@
 
       <div class="collapse navbar-collapse text-right" id="navbarNav">
         <ul class="navbar-nav ml-auto flex-nowrap">
-          {% for page in site.pages %}
-            {% if page.permalink == '/' %} {% assign about_title = page.title %} {% endif %}
+          {% assign current_lang = page.lang | default: site.default_lang | default: 'en' %}
+          {% if page.url == '/ja/' or page.url == '/ja' or page.url contains '/ja/' %}
+            {% assign current_lang = 'ja' %}
+          {% endif %}
+
+          {% if current_lang == 'ja' %}
+            {% assign about_link = '/ja/' %}
+          {% else %}
+            {% assign about_link = '/' %}
+          {% endif %}
+
+          {% assign about_title = 'about' %}
+          {% for p in site.pages %}
+            {% if p.permalink == about_link %}
+              {% assign about_title = p.title %}
+            {% endif %}
           {% endfor %}
 
           <!-- About -->
-          <li class="nav-item {% if page.permalink == '/' %}active{% endif %}">
-            <a class="nav-link" href="{{ '/' | relative_url }}">
+          <li class="nav-item {% if page.url == about_link or page.permalink == about_link %}active{% endif %}">
+            <a class="nav-link" href="{{ about_link | relative_url }}">
               {{- about_title }}
-              {% if page.permalink == '/' %}
+              {% if page.url == about_link or page.permalink == about_link %}
                 <span class="sr-only">(current)</span>
               {% endif %}
             </a>
@@ -59,7 +68,18 @@
           <!-- Other pages -->
           {% assign sorted_pages = site.pages | sort: 'nav_order' %}
           {% for p in sorted_pages %}
-            {% if p.nav and p.autogen == null %}
+            {% assign page_in_current_lang = false %}
+            {% if current_lang == 'ja' %}
+              {% if p.lang == nil or p.lang == 'ja' %}
+                {% assign page_in_current_lang = true %}
+              {% endif %}
+            {% else %}
+              {% if p.lang == nil or p.lang == 'en' %}
+                {% assign page_in_current_lang = true %}
+              {% endif %}
+            {% endif %}
+
+            {% if p.nav and p.autogen == null and page_in_current_lang %}
               {% if p.dropdown %}
                 {% assign has_active_child = false %}
                 {% for child in p.children %}
@@ -103,7 +123,7 @@
                   {%- if p.permalink contains '://' -%}
                     {%- assign url = p.permalink -%}
                   {%- elsif p.permalink contains '/blog/' -%}
-                    {%- assign url = '/blog/' -%}
+                    {%- assign url = p.permalink | remove: 'index.html' -%}
                   {%- else -%}
                     {%- assign url = p.url -%}
                   {%- endif %}

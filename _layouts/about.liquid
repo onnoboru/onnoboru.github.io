@@ -40,10 +40,19 @@ layout: default
 
     <div class="clearfix">{{ content }}</div>
 
+    {% assign page_lang = page.lang | default: site.default_lang | default: 'en' %}
+    {% if page_lang == 'ja' %}
+      {% assign news_path = '/ja/news/' %}
+      {% assign blog_path = '/ja/blog/' %}
+    {% else %}
+      {% assign news_path = '/news/' %}
+      {% assign blog_path = '/blog/' %}
+    {% endif %}
+
     <!-- News -->
     {% if page.announcements and page.announcements.enabled %}
       <h2>
-        <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
+        <a href="{{ news_path | relative_url }}" style="color: inherit">news</a>
       </h2>
       {% include news.liquid limit=true %}
     {% endif %}
@@ -51,7 +60,7 @@ layout: default
     <!-- Latest posts -->
     {% if page.latest_posts and page.latest_posts.enabled %}
       <h2>
-        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">latest posts</a>
+        <a href="{{ blog_path | relative_url }}" style="color: inherit">latest posts</a>
       </h2>
       {% include latest_posts.liquid %}
     {% endif %}

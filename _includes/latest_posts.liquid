@@ -1,6 +1,13 @@
 <div class="news">
   {% if page.latest_posts != blank %}
-    {% assign latest_posts_size = site.posts | size %}
+    {% assign page_lang = page.lang | default: site.default_lang | default: 'en' %}
+    {% assign latest_posts = site.posts %}
+    {% if page_lang == 'en' %}
+      {% assign latest_posts = latest_posts | where_exp: 'item', "item.lang == nil or item.lang == 'en'" %}
+    {% else %}
+      {% assign latest_posts = latest_posts | where: 'lang', page_lang %}
+    {% endif %}
+    {% assign latest_posts_size = latest_posts | size %}
     <div
       class="table-responsive"
       {% if page.latest_posts.scrollable and latest_posts_size > 3 %}
@@ -8,7 +15,6 @@
       {% endif %}
     >
       <table class="table table-sm table-borderless">
-        {% assign latest_posts = site.posts %}
         {% if page.latest_posts.limit %}
           {% assign latest_posts_limit = page.latest_posts.limit %}
         {% else %}

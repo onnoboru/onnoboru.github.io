@@ -1,14 +1,14 @@
 ---
 layout: default
-permalink: /blog/
+permalink: /ja/blog/
 title: blog
-lang: en
+lang: ja
 nav: true
 nav_order: 2
 pagination:
   enabled: true
   collection: posts
-  permalink: /page/:num/
+  permalink: /ja/blog/page/:num/
   per_page: 5
   sort_field: date
   sort_reverse: true

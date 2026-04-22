@@ -102,6 +102,8 @@
         a.btn {
           color: var(--global-text-color);
           border: 1px solid var(--global-text-color);
+          text-transform: none;
+          font-size: 0.95rem;
           padding-left: 1rem;
           padding-right: 1rem;
           padding-top: 0.25rem;
