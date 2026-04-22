@@ -1,6 +1,6 @@
 ---
 layout: page
-title: weekend builds
+title: Weekend Builds
 permalink: /projects/
 lang: en
 description: A growing collection of your cool projects.

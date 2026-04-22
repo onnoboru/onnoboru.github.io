@@ -1,7 +1,7 @@
 ---
 layout: default
 permalink: /ja/blog/
-title: blog
+title: Blog
 lang: ja
 nav: true
 nav_order: 2

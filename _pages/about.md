@@ -1,6 +1,6 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
 # subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
 
@@ -28,6 +28,9 @@ latest_posts:
 ---
 
 I am an incoming undergraduate student interested in robotics and machine learning.  
+
 I previously worked as a student research assistant at the Matsuo-Iwasawa Laboratory at the University of Tokyo under Professor Tatsuya Matsushima.  
+
 I am a two-time member of the Japan national team for the International Olympiad in Artificial Intelligence (IOAI), winning a silver medal in 2025 and a bronze medal in 2024.  
+
 My interests lie in building intelligent systems that can perceive the physical world and act reliably and smoothly.
