@@ -85,10 +85,10 @@
           {%- if forloop.last and author_array_limit == author_array_size %}and {% endif -%}
         {% endif %}
         {%- if author_is_self -%}
-          <em>
+          <strong class="text-primary">
             {{- author.first }}
             {{ author_last_html -}}
-          </em>
+          </strong>
         {%- else -%}
           {%- if coauthor_url -%}
             <a href="{{ coauthor_url }}">
@@ -124,13 +124,7 @@
               var element = $(this);
               element.attr('title', '');
               var more_authors_text = element.text() == '{{ more_authors_hide }}' ? '{{ more_authors_show }}' : '{{ more_authors_hide }}';
-              var cursorPosition = 0;
-              var textAdder = setInterval(function(){
-                element.html(more_authors_text.substring(0, cursorPosition + 1));
-                if (++cursorPosition == more_authors_text.length){
-                  clearInterval(textAdder);
-                }
-            }, '{{ site.more_authors_animation_delay }}');
+              element.html(more_authors_text);
           "
         >
           {{- more_authors_hide -}}
@@ -237,6 +231,12 @@
       {% endif %}
       {% if entry.blog %}
         <a href="{{ entry.blog }}" class="btn btn-sm z-depth-0" role="button">Blog</a>
+      {% endif %}
+      {% if entry.project_url %}
+        <a href="{{ entry.project_url }}" class="btn btn-sm z-depth-0" role="button">Project Page</a>
+      {% endif %}
+      {% if entry.dataset_url %}
+        <a href="{{ entry.dataset_url }}" class="btn btn-sm z-depth-0" role="button">Dataset</a>
       {% endif %}
       {% if entry.code %}
         <a href="{{ entry.code }}" class="btn btn-sm z-depth-0" role="button">Code</a>
