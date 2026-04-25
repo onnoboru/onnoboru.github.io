@@ -14,3 +14,4 @@ Gemfile.lock
 node_modules/
 vendor
 localtest.sh
+blog_benri.md

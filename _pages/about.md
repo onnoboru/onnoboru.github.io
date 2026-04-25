@@ -29,8 +29,8 @@ latest_posts:
 
 I am an incoming undergraduate student interested in robotics and machine learning.  
 
-I previously worked as a student research assistant at the Matsuo-Iwasawa Laboratory at the University of Tokyo under Professor Tatsuya Matsushima.  
+I previously worked as a student research assistant at [Matsuo-Iwasawa Lab](https://weblab.t.u-tokyo.ac.jp/en/) at the University of Tokyo under [Prof. Tatsuya Matsushima](https://weblab.t.u-tokyo.ac.jp/en/member/tatsuya-matsushima/).  
 
-I am a two-time member of the Japan national team for the International Olympiad in Artificial Intelligence (IOAI), winning a silver medal in 2025 and a bronze medal in 2024.  
+I am a two-time member of the Japan national team for the [International Olympiad in Artificial Intelligence (IOAI)](https://ioai-official.org/), winning a silver medal in 2025 and a bronze medal in 2024.  
 
 My interests lie in building intelligent systems that can perceive the physical world and act reliably and smoothly.
