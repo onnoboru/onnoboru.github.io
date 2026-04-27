@@ -42,3 +42,467 @@ sequenceDiagram
     Alice->>John: Hello John, how are you?
     John-->>Alice: Great!
 ```
+
+
+redirect のやりかた
+
+---
+layout: post
+title: a post with redirect
+date: 2022-02-01 17:39:00
+description: you can also redirect to assets like pdf
+redirect: /assets/pdf/example_pdf.pdf
+---
+
+Redirecting to another page.
+
+table を使いたい時
+pretty_table: true
+
+多分 dataset の中身とかを使う時に便利
+## More Complex Example
+
+By using [Bootstrap Table](https://bootstrap-table.com/) it is possible to create pretty complex tables, with pagination, search, and more. For example, the following HTML code will display a table, loaded from a JSON file, with pagination, search, checkboxes, and header/content alignment. For more information, check the [documentation](https://examples.bootstrap-table.com/index.html).
+
+{% raw  %}
+
+```html
+<table
+  data-click-to-select="true"
+  data-height="460"
+  data-pagination="true"
+  data-search="true"
+  data-toggle="table"
+  data-url="{{ '/assets/json/table_data.json' | relative_url }}"
+>
+  <thead>
+    <tr>
+      <th data-checkbox="true"></th>
+      <th data-field="id" data-halign="left" data-align="center" data-sortable="true">ID</th>
+      <th data-field="name" data-halign="center" data-align="right" data-sortable="true">Item Name</th>
+      <th data-field="price" data-halign="right" data-align="left" data-sortable="true">Item Price</th>
+    </tr>
+  </thead>
+</table>
+```
+
+{% endraw  %}
+
+<table
+  data-click-to-select="true"
+  data-height="460"
+  data-pagination="true"
+  data-search="true"
+  data-toggle="table"
+  data-url="{{ '/assets/json/table_data.json' | relative_url }}">
+  <thead>
+    <tr>
+      <th data-checkbox="true"></th>
+      <th data-field="id" data-halign="left" data-align="center" data-sortable="true">ID</th>
+      <th data-field="name" data-halign="center" data-align="right" data-sortable="true">Item Name</th>
+      <th data-field="price" data-halign="right" data-align="left" data-sortable="true">Item Price</th>
+    </tr>
+  </thead>
+</table>
+
+jupyter notebook
+{::nomarkdown}
+{% assign jupyter_path = "assets/jupyter/blog.ipynb" | relative_url %}
+{% capture notebook_exists %}{% file_exists assets/jupyter/blog.ipynb %}{% endcapture %}
+{% if notebook_exists == "true" %}
+{% jupyter_notebook jupyter_path %}
+{% else %}
+
+<p>Sorry, the notebook you are looking for does not exist.</p>
+{% endif %}
+{:/nomarkdown}
+
+
+custom のメッセージ、 warning とか
+---
+layout: post
+title: a post with custom blockquotes
+date: 2023-05-12 15:53:00-0400
+description: an example of a blog post with custom blockquotes
+tags: formatting blockquotes
+categories: sample-posts
+giscus_comments: true
+related_posts: true
+---
+
+This post shows how to add custom styles for blockquotes. Based on [jekyll-gitbook](https://github.com/sighingnow/jekyll-gitbook) implementation.
+
+We decided to support the same custom blockquotes as in [jekyll-gitbook](https://sighingnow.github.io/jekyll-gitbook/jekyll/2022-06-30-tips_warnings_dangers.html), which are also found in a lot of other sites' styles. The styles definitions can be found on the [\_sass/\_typograms.scss](https://github.com/alshedivat/al-folio/blob/main/_sass/_typograms.scss) file, more specifically:
+
+```scss
+/* Tips, warnings, and dangers */
+.post .post-content blockquote {
+  &.block-tip {
+    border-color: var(--global-tip-block);
+    background-color: var(--global-tip-block-bg);
+
+    p {
+      color: var(--global-tip-block-text);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: var(--global-tip-block-title);
+    }
+  }
+
+  &.block-warning {
+    border-color: var(--global-warning-block);
+    background-color: var(--global-warning-block-bg);
+
+    p {
+      color: var(--global-warning-block-text);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: var(--global-warning-block-title);
+    }
+  }
+
+  &.block-danger {
+    border-color: var(--global-danger-block);
+    background-color: var(--global-danger-block-bg);
+
+    p {
+      color: var(--global-danger-block-text);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: var(--global-danger-block-title);
+    }
+  }
+}
+```
+
+A regular blockquote can be used as following:
+
+```markdown
+> This is a regular blockquote
+> and it can be used as usual
+```
+
+> This is a regular blockquote
+> and it can be used as usual
+
+These custom styles can be used by adding the specific class to the blockquote, as follows:
+
+<!-- prettier-ignore-start -->
+
+```markdown
+> ##### TIP
+>
+> A tip can be used when you want to give advice
+> related to a certain content.
+{: .block-tip }
+```
+
+> ##### TIP
+>
+> A tip can be used when you want to give advice
+> related to a certain content.
+{: .block-tip }
+
+```markdown
+> ##### WARNING
+>
+> This is a warning, and thus should
+> be used when you want to warn the user
+{: .block-warning }
+```
+
+> ##### WARNING
+>
+> This is a warning, and thus should
+> be used when you want to warn the user
+{: .block-warning }
+
+```markdown
+> ##### DANGER
+>
+> This is a danger zone, and thus should
+> be used carefully
+{: .block-danger }
+```
+
+> ##### DANGER
+>
+> This is a danger zone, and thus should
+> be used carefully
+{: .block-danger }
+
+<!-- prettier-ignore-end -->
+
+VIDEO
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include video.liquid path="assets/video/pexels-engin-akyurt-6069112-960x540-30fps.mp4" class="img-fluid rounded z-depth-1" controls=true autoplay=true %}
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        {% include video.liquid path="assets/video/pexels-engin-akyurt-6069112-960x540-30fps.mp4" class="img-fluid rounded z-depth-1" controls=true %}
+    </div>
+</div>
+<div class="caption">
+    A simple, elegant caption looks good between video rows, after each row, or doesn't have to be there at all.
+</div>
+
+It does also support embedding videos from different sources. Here are some examples:
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include video.liquid path="https://www.youtube.com/embed/jNQXAC9IVRw" class="img-fluid rounded z-depth-1" %}
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        {% include video.liquid path="https://player.vimeo.com/video/524933864?h=1ac4fd9fb4&title=0&byline=0&portrait=0" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+
+related を表示させたい (自動) -> 普通に設定パートで related : True にする
+
+つけたほうがいい
+```yml
+toc:
+  sidebar: left
+```
+
+chart は e-charts や chart.js で作れる
+
+複数の選択肢の tab を作る
+tabs: true
+---
+
+This is how a post with [tabs](https://github.com/Ovski4/jekyll-tabs) looks like. Note that the tabs could be used for different purposes, not only for code.
+
+## First tabs
+
+To add tabs, use the following syntax:
+
+{% raw %}
+
+```liquid
+{% tabs group-name %}
+
+{% tab group-name tab-name-1 %}
+
+Content 1
+
+{% endtab %}
+
+{% tab group-name tab-name-2 %}
+
+Content 2
+
+{% endtab %}
+
+{% endtabs %}
+```
+
+{% endraw %}
+
+With this you can generate visualizations like:
+
+{% tabs log %}
+
+{% tab log php %}
+
+```php
+var_dump('hello');
+```
+
+{% endtab %}
+
+{% tab log js %}
+
+```javascript
+console.log("hello");
+```
+
+{% endtab %}
+
+{% tab log ruby %}
+
+```javascript
+pputs 'hello'
+```
+
+{% endtab %}
+
+{% endtabs %}
+
+## Another example
+
+{% tabs data-struct %}
+
+{% tab data-struct yaml %}
+
+```yaml
+hello:
+  - "whatsup"
+  - "hi"
+```
+
+{% endtab %}
+
+{% tab data-struct json %}
+
+```json
+{
+  "hello": ["whatsup", "hi"]
+}
+```
+
+{% endtab %}
+
+{% endtabs %}
+
+## Tabs for something else
+
+{% tabs something-else %}
+
+{% tab something-else text %}
+
+Regular text
+
+{% endtab %}
+
+{% tab something-else quote %}
+
+> A quote
+
+{% endtab %}
+
+{% tab something-else list %}
+
+Hipster list
+
+- brunch
+- fixie
+- raybans
+- messenger bag
+
+{% endtab %}
+
+{% endtabs %}
+
+グラフプロット
+chart:
+  plotly: true
+---
+
+This is an example post with some [plotly](https://plotly.com/javascript/) code.
+
+````markdown
+```plotly
+{
+  "data": [
+    {
+      "x": [1, 2, 3, 4],
+      "y": [10, 15, 13, 17],
+      "type": "scatter"
+    },
+    {
+      "x": [1, 2, 3, 4],
+      "y": [16, 5, 11, 9],
+      "type": "scatter"
+    }
+  ]
+}
+```
+````
+
+Which generates:
+
+```plotly
+{
+  "data": [
+    {
+      "x": [1, 2, 3, 4],
+      "y": [10, 15, 13, 17],
+      "type": "scatter"
+    },
+    {
+      "x": [1, 2, 3, 4],
+      "y": [16, 5, 11, 9],
+      "type": "scatter"
+    }
+  ]
+}
+```
+
+Also another example chart.
+
+````markdown
+```plotly
+{
+  "data": [
+    {
+      "x": [1, 2, 3, 4],
+      "y": [10, 15, 13, 17],
+      "mode": "markers"
+    },
+    {
+      "x": [2, 3, 4, 5],
+      "y": [16, 5, 11, 9],
+      "mode": "lines"
+    },
+    {
+      "x": [1, 2, 3, 4],
+      "y": [12, 9, 15, 12],
+      "mode": "lines+markers"
+    }
+  ],
+  "layout": {
+    "title": {
+      "text": "Line and Scatter Plot"
+    }
+  }
+}
+```
+````
+
+This is how it looks like:
+
+```plotly
+{
+  "data": [
+    {
+      "x": [1, 2, 3, 4],
+      "y": [10, 15, 13, 17],
+      "mode": "markers"
+    },
+    {
+      "x": [2, 3, 4, 5],
+      "y": [16, 5, 11, 9],
+      "mode": "lines"
+    },
+    {
+      "x": [1, 2, 3, 4],
+      "y": [12, 9, 15, 12],
+      "mode": "lines+markers"
+    }
+  ],
+  "layout": {
+    "title": {
+      "text": "Line and Scatter Plot"
+    }
+  }
+}
+```

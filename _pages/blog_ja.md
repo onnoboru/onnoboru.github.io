@@ -60,9 +60,9 @@ pagination:
 {% assign page_lang = page.lang | default: site.default_lang | default: 'en' %}
 
 {% if page_lang == 'en' %}
-  {% assign featured_posts = site.posts | where: "featured", "true" | where_exp: 'post', "post.lang == nil or post.lang == 'en'" %}
+  {% assign featured_posts = site.posts | where: "featured", "true" | where_exp: 'post', "post.external_source == nil" | where_exp: 'post', "post.lang == nil or post.lang == 'en'" %}
 {% else %}
-  {% assign featured_posts = site.posts | where: "featured", "true" | where: 'lang', page_lang %}
+  {% assign featured_posts = site.posts | where: "featured", "true" | where_exp: 'post', "post.external_source != nil or post.lang == page_lang" %}
 {% endif %}
 {% if featured_posts.size > 0 %}
 <br>
@@ -117,9 +117,9 @@ pagination:
     {% endif %}
 
     {% if page_lang == 'en' %}
-      {% assign postlist = postlist | where_exp: 'post', "post.lang == nil or post.lang == 'en'" %}
+      {% assign postlist = postlist | where_exp: 'post', "post.external_source == nil" | where_exp: 'post', "post.lang == nil or post.lang == 'en'" %}
     {% else %}
-      {% assign postlist = postlist | where: 'lang', page_lang %}
+      {% assign postlist = postlist | where_exp: 'post', "post.external_source != nil or post.lang == page_lang" %}
     {% endif %}
 
     {% for post in postlist %}
