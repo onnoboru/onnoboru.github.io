@@ -27,10 +27,10 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am an incoming undergraduate student interested in robotics and machine learning.  
+I am an incoming undergraduate student at Nanyang Technological University College of Computing and Data Science, majoring in Data Science and Artificial Intelligence. I am especially interested in robotics and machine learning, with a focus on vision-language-action models and robot learning.
 
-I previously worked as a student research assistant at [Matsuo-Iwasawa Lab](https://weblab.t.u-tokyo.ac.jp/en/) at the University of Tokyo under [Prof. Tatsuya Matsushima](https://weblab.t.u-tokyo.ac.jp/en/member/tatsuya-matsushima/).  
+I'm currently working as a research intern at [OMRON SINIC X](https://www.omron.com/sinicx/en/), mainly mentored by [Dr. Mai Nishimura](https://denkiwakame.github.io/). Previously, I worked as a student research assistant at [Matsuo-Iwasawa Lab](https://weblab.t.u-tokyo.ac.jp/en/) at the University of Tokyo under [Prof. Tatsuya Matsushima](https://weblab.t.u-tokyo.ac.jp/en/member/tatsuya-matsushima/).
 
-I am a two-time member of the Japan national team for the [International Olympiad in Artificial Intelligence (IOAI)](https://ioai-official.org/), winning a silver medal in 2025 and a bronze medal in 2024.  
+I have represented Japan twice at the [International Olympiad in Artificial Intelligence (IOAI)](https://ioai-official.org/), earning a silver medal in 2025 and a bronze medal in 2024.
 
-My interests lie in building intelligent systems that can perceive the physical world and act reliably and smoothly.
+I am interested in building intelligent systems that can perceive the physical world and act reliably and smoothly.

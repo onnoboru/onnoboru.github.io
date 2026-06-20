@@ -40,14 +40,8 @@ layout: default
 
     <div class="clearfix">{{ content }}</div>
 
-    {% assign page_lang = page.lang | default: site.default_lang | default: 'en' %}
-    {% if page_lang == 'ja' %}
-      {% assign news_path = '/ja/news/' %}
-      {% assign blog_path = '/ja/blog/' %}
-    {% else %}
-      {% assign news_path = '/news/' %}
-      {% assign blog_path = '/blog/' %}
-    {% endif %}
+    {% assign news_path = '/news/' %}
+    {% assign blog_path = '/blog/' %}
 
     <!-- News -->
     {% if page.announcements and page.announcements.enabled %}

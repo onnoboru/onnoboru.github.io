@@ -37,16 +37,7 @@
 
       <div class="collapse navbar-collapse text-right" id="navbarNav">
         <ul class="navbar-nav ml-auto flex-nowrap">
-          {% assign current_lang = page.lang | default: site.default_lang | default: 'en' %}
-          {% if page.url == '/ja/' or page.url == '/ja' or page.url contains '/ja/' %}
-            {% assign current_lang = 'ja' %}
-          {% endif %}
-
-          {% if current_lang == 'ja' %}
-            {% assign about_link = '/ja/' %}
-          {% else %}
-            {% assign about_link = '/' %}
-          {% endif %}
+          {% assign about_link = '/' %}
 
           {% assign about_title = 'about' %}
           {% for p in site.pages %}
@@ -68,18 +59,7 @@
           <!-- Other pages -->
           {% assign sorted_pages = site.pages | sort: 'nav_order' %}
           {% for p in sorted_pages %}
-            {% assign page_in_current_lang = false %}
-            {% if current_lang == 'ja' %}
-              {% if p.lang == nil or p.lang == 'ja' %}
-                {% assign page_in_current_lang = true %}
-              {% endif %}
-            {% else %}
-              {% if p.lang == nil or p.lang == 'en' %}
-                {% assign page_in_current_lang = true %}
-              {% endif %}
-            {% endif %}
-
-            {% if p.nav and p.autogen == null and page_in_current_lang %}
+            {% if p.nav and p.autogen == null %}
               {% if p.dropdown %}
                 {% assign has_active_child = false %}
                 {% for child in p.children %}
@@ -137,16 +117,6 @@
               {% endif %}
             {% endif %}
           {% endfor %}
-          {% if page.url == '/ja/' or page.url == '/ja' or page.url contains '/ja/' %}
-            {% assign language_switch_url = '/' %}
-            {% assign language_switch_label = 'EN' %}
-          {% else %}
-            {% assign language_switch_url = '/ja/' %}
-            {% assign language_switch_label = 'JA' %}
-          {% endif %}
-          <li class="nav-item">
-            <a class="nav-link" href="{{ language_switch_url | relative_url }}">{{ language_switch_label }}</a>
-          </li>
           {% if site.search_enabled %}
             <!-- Search -->
             <li class="nav-item">
