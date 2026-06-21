@@ -9,7 +9,9 @@ mermaid:
   zoomable: true
 ---
 
-This theme supports generating various diagrams from a text description using [mermaid](https://mermaid-js.github.io/mermaid/){:target="\_blank"}. Previously, this was done using the [jekyll-diagrams](https://github.com/zhustec/jekyll-diagrams){:target="\_blank"} plugin. For more information on this matter, see the [related issue](https://github.com/alshedivat/al-folio/issues/1609#issuecomment-1656995674).
+This theme supports generating various diagrams from a text description using
+[mermaid](https://mermaid-js.github.io/mermaid/){:target="\_blank"}. Previously,
+this was done using the [jekyll-diagrams](https://github.com/zhustec/jekyll-diagrams){:target="\_blank"} plugin. For more information on this matter, see the [related issue](https://github.com/alshedivat/al-folio/issues/1609#issuecomment-1656995674).
 
 To enable mermaid, you have to put the following in this post frontmatter:
 
@@ -62,7 +64,9 @@ pretty_table: true
 多分 dataset の中身とかを使う時に便利
 ## More Complex Example
 
-By using [Bootstrap Table](https://bootstrap-table.com/) it is possible to create pretty complex tables, with pagination, search, and more. For example, the following HTML code will display a table, loaded from a JSON file, with pagination, search, checkboxes, and header/content alignment. For more information, check the [documentation](https://examples.bootstrap-table.com/index.html).
+By using [Bootstrap Table](https://bootstrap-table.com/) it is possible to
+create pretty complex tables, with pagination, search, and more. For example,
+the following HTML code will display a table, loaded from a JSON file, with pagination, search, checkboxes, and header/content alignment. For more information, check the [documentation](https://examples.bootstrap-table.com/index.html).
 
 {% raw  %}
 

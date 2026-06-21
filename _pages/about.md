@@ -27,10 +27,17 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am an incoming undergraduate student at Nanyang Technological University College of Computing and Data Science, majoring in Data Science and Artificial Intelligence (with Turing AI Scholarship).  I am particularly interested in robotics and machine learning, focusing on vision-language-action models and robot learning.
+I am an incoming undergraduate student at Nanyang Technological University College of Computing and Data Science,
+majoring in Data Science and Artificial Intelligence (with Turing AI Scholarship). I am particularly interested in
+robotics and machine learning, focusing on vision-language-action models and robot learning.
 
-I am currently working as a research intern at [OMRON SINIC X](https://www.omron.com/sinicx/en/), primarily mentored by [Dr. Mai Nishimura](https://denkiwakame.github.io/). Previously, I worked as a student research assistant at [Matsuo-Iwasawa Lab](https://weblab.t.u-tokyo.ac.jp/en/) at the University of Tokyo, under [Prof. Tatsuya Matsushima](https://weblab.t.u-tokyo.ac.jp/en/member/tatsuya-matsushima/).
+I am currently working as a research intern at [OMRON SINIC X](https://www.omron.com/sinicx/en/), primarily mentored by
+[Dr. Mai Nishimura](https://denkiwakame.github.io/). Previously, I worked as a student research assistant at
+[Matsuo-Iwasawa Lab](https://weblab.t.u-tokyo.ac.jp/en/) at the University of Tokyo, under
+[Prof. Tatsuya Matsushima](https://weblab.t.u-tokyo.ac.jp/en/member/tatsuya-matsushima/).
 
-I have represented Japan twice at the [International Olympiad in Artificial Intelligence (IOAI)](https://ioai-official.org/), earning a silver medal in 2025 and a bronze medal in 2024.
+I have represented Japan twice at the [International Olympiad in Artificial Intelligence (IOAI)](https://ioai-official.org/),
+earning a silver medal in 2025 and a bronze medal in 2024.
 
-My research focuses on developing intelligent systems that can perceive the physical world and act reliably and smoothly.
+My research focuses on developing intelligent systems that can perceive the physical world and act reliably and
+smoothly.

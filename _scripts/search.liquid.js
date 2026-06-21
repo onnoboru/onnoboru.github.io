@@ -20,6 +20,7 @@ ninja.data = [
   {%- assign sorted_pages = site.pages | sort: "nav_order" -%}
   {%- for p in sorted_pages -%}
     {%- if p.nav and p.autogen == null -%}
+      {%- unless p.permalink contains "/blog/" -%}
       {%- if p.dropdown -%}
         {%- for child in p.children -%}
           {%- unless child.title == 'divider' -%}
@@ -50,6 +51,7 @@ ninja.data = [
           },
         },
       {%- endif -%}
+      {%- endunless -%}
     {%- endif -%}
   {%- endfor -%}
   {%- if site.posts_in_search -%}

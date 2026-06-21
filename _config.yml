@@ -129,21 +129,7 @@ disqus_shortname: al-folio # put your disqus shortname
 # If you have blog posts published on medium.com or other external sources,
 # you can display them in your blog by adding a link to the RSS feed.
 # Optional: Set default categories and tags for posts from each source.
-external_sources:
-  - name: hatenablog
-    posts:
-      - url: https://onnoboru.hatenablog.com/entry/2024/12/23/000344
-        published_date: 2024-12-23
-      - url: https://onnoboru.hatenablog.com/entry/2025/05/25/215119
-        published_date: 2025-05-25
-    categories: [external-posts]
-    tags: [ioai]
-  - name: note - Japan Olympiad in AI committee
-    posts:
-      - url: https://note.com/ioai_japan/n/n5d25ad2e09e2
-        published_date: 2025-08-20
-    categories: [external-posts]
-    tags: [ioai]
+
 
 # -----------------------------------------------------------------------------
 # Newsletter
