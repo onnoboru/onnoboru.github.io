@@ -16,13 +16,6 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/publications/";
           },
-        },{id: "nav-blog",
-          title: "Blog",
-          description: "",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/blog/";
-          },
         },{id: "nav-weekend-builds",
           title: "Weekend Builds",
           description: "A growing collection of your cool projects.",
@@ -30,40 +23,7 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
-        },{id: "post-ioai2025-参加記-鈴木温登-joai-日本人工知能オリンピック",
-        
-          title: 'IOAI2025 参加記 - 鈴木温登｜JOAI 日本人工知能オリンピック <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
-        
-        description: "はじめに  この記事は IOAI2025 の参加記です。予選までの記録は別の記事を参考にしてください。競技の内容も交流面の内容も雑多に書いてありますが、少しでも今後の JOAI / IOAI の参加者の参考になる部分があれば幸いです。質問等ある場合は twitter (@onnoboru_ml) かメール (onnoboru.ml [at] gmail.com) までお願いします。  IOAI とは？  　数学オリンピックや情報オリンピックの AI 版だと思っていただければ問題ないです。 kaggle のようなタスクを 1 日 3 問解くのを 2 日間行いスコアの合計で競います。去年と",
-        section: "Posts",
-        handler: () => {
-          
-            window.open("https://note.com/ioai_japan/n/n5d25ad2e09e2", "_blank");
-          
-        },
-      },{id: "post-joai-2025-参加記-onnoboruのブログ",
-        
-          title: 'JOAI 2025 参加記 - onnoboruのブログ <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
-        
-        description: "はじめに この記事は、第一回日本人工知能オリンピックの参戦記です。 問題のネタバレを含みます 。問題設定や代表進出条件等は他に素晴らしい記事があるのでここでは省略させていただきます。 JOAI 開始までにやったこと IOAI2024 が終わってからは学校関連の諸々が忙しく、 kaggle 等に取り組む時間は減っていたのですが、それでも時々 atmacup に出たり、 kaggle のソリューションを見たり、学校の課題研究の授業で機械学習のコードを書いたりしてました。有り難いことに、 3 月頃からとある研究室でインターンをさせてもらえることになり、そこからはコードに触れる時間が圧倒的に増えました…",
-        section: "Posts",
-        handler: () => {
-          
-            window.open("https://onnoboru.hatenablog.com/entry/2025/05/25/215119", "_blank");
-          
-        },
-      },{id: "post-ioai2024-参加記-onnoboru-視点-onnoboruのブログ",
-        
-          title: 'IOAI2024 参加記 (onnoboru 視点) - onnoboruのブログ <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
-        
-        description: "ブルガリアで開催された第 1 回 International Olympiad in Artificial Intelligence ( 以下 IOAI ) に日本代表として参加しました。 IOAI は今年から始まった高校生向け国際大会で、 AI に関する知識、技能を各国から選出されたチーム同士で競い合います。大会前～終了までの間に（僕視点で）何が起きていたのか、その時何を考えていたのかを書き記そうと思います。",
-        section: "Posts",
-        handler: () => {
-          
-            window.open("https://onnoboru.hatenablog.com/entry/2024/12/23/000344", "_blank");
-          
-        },
-      },{id: "books-the-godfather",
+        },{id: "books-the-godfather",
           title: 'The Godfather',
           description: "",
           section: "Books",handler: () => {
