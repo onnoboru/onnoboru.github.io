@@ -270,7 +270,8 @@ let transTheme = () => {
 let determineThemeSetting = () => {
   let themeSetting = localStorage.getItem("theme");
   if (themeSetting != "dark" && themeSetting != "light" && themeSetting != "system") {
-    themeSetting = "system";
+    // Default to light instead of system so the site shows light mode by default.
+    themeSetting = "light";
   }
   return themeSetting;
 };
