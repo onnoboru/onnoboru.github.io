@@ -1,14 +1,10 @@
 cv:
   name: Haruto Suzuki
-  label: Incoming Undergraduate Student
-  email: onnoboru.ml@gmail.com
-  location: Tokyo, Japan
-  image: ""
-  summary: A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time
+  email: HARUTO001@e.ntu.edu.sg
+  location: Singapore
+  website: https://onnoboru.github.io
 
   social_networks:
-    - network: X
-      username: onnoboru_ml
     - network: GitHub
       username: onnoboru
     - network: LinkedIn
@@ -16,167 +12,153 @@ cv:
 
   sections:
     Education:
-      - institution: University of Zurich
-        location: Zurich, Switzerland
-        url: https://www.uzh.ch/
-        area: Physics
-        studyType: PhD
-        start_date: 1900
-        end_date: 1905
-        score: ""
-        courses: "Theory of Relativity"
+      - institution: Nanyang Technological University
+        location: Singapore
+        url: https://www.ntu.edu.sg/education/undergraduate-programme/turing-ai-scholars-programme
+        area: Bachelor of Computing (Hons) in Data Science and Artificial Intelligence
+        start_date: 2026-08
+        end_date: present
         highlights:
-          - Description 1.
-          - Description 2.
+          - Turing AI Scholars Programme Scholar.
 
-      - institution: Eidgenössische Technische Hochschule
-        location: Zurich, Switzerland
-        area: Physics
-        studyType: Federal teaching diploma
-        start_date: 1896
-        end_date: 1900
+      - institution: Senior High School at Komaba, University of Tsukuba
+        location: Tokyo, Japan
+        area: Secondary Education
+        start_date: 2023-04
+        end_date: 2026-03
         highlights:
-          - Description 1.
-          - Description 2.
+          - Graduated with the Alumni Association Award (top honors).
 
-    Experience:
-      - company: Institute for Advanced Study, Princeton University
-        position: Professor of Theoretical Physics
-        location: Princeton University, NJ
-        start_date: 1933
-        end_date: 1955
-        summary: Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.
+    Academic Interests:
+      - label: Research
+        details: Robot learning, robot foundation models, reinforcement learning, and computer vision
+        name: Research
+
+    Research Experience:
+      - company: OMRON SINIC X
+        position: Research Intern
+        location: Tokyo, Japan
+        start_date: 2026-06
+        end_date: 2026-07
+        url: https://www.omron.com/sinicx/en/
         highlights:
-          - Relativity
-          - Description 2.
+          - Investigated Vision-Language-Action models for robotic manipulation under the primary mentorship of [Dr. Mai Nishimura](https://denkiwakame.github.io/).
+          - Contributed to a manuscript arising from this work, currently under review.
 
-      - company: California Institute of Technology
-        position: Visiting Professor
-        location: Pasadena, California, US
-        start_date: 1933
-        end_date: 1933
+      - company: Matsuo-Iwasawa Laboratory, The University of Tokyo
+        position: Student Research Assistant
+        location: Tokyo, Japan
+        start_date: 2025-03
+        end_date: 2026-03
+        url: https://weblab.t.u-tokyo.ac.jp/en/
         highlights:
-          - Description 1.
-          - Description 2.
+          - Conducted research on robot foundation models under the guidance of [Prof. Tatsuya Matsushima](https://weblab.t.u-tokyo.ac.jp/en/member/tatsuya-matsushima/) and [Dr. Takahiro Miki](https://takahiromiki.com/).
+          - Contributed to the [AIRoA MoMa Dataset preprint](https://arxiv.org/abs/2509.25032), working across dataset construction, model training, simulator development, experimental evaluation, and research subgroup management.
 
-      - company: Kaiser Wilhelm Institute for Physics
-        position: Director
-        location: Berlin, Germany
-        start_date: 1917
-        end_date: 1933
-
-      - company: Karl-Ferdinand University
-        position: Professor of Theoretical Physics
-        location: Prague, Czechoslovakia
-        start_date: 1911
-        end_date: 1917
-
-      - company: University of Zurich
-        position: Associate Professor of Theoretical Physics
-        location: Zurich, Switzerland
-        start_date: 1909
-        end_date: 1911
-
-    Volunteer:
-      - company: People's Climate March
-        position: Lead Organizer
-        location: Zurich, Switzerland
-        start_date: 2014-04-01
-        end_date: 2015-07-01
-        summary: Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.
+      - company: Experts in Information Science Program
+        position: Fourth-generation Fellow
+        start_date: 2023-04
+        end_date: 2024-03
+        url: https://www.nii.ac.jp/tatsujin/en/
         highlights:
-          - "Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march."
-          - "Men of the year 2014 by Time magazine"
+          - Selected as a fourth-generation fellow in National Institute  of Informatics's elite research training program for high school students with exceptional abilities in informatics.
+          - Researched acceleration of fluid simulations using recurrent neural networks under the supervision of [Dr. Hiroshi Kajino](https://sites.google.com/site/hiroshikajino1989/home).
 
-    Awards:
-      - title: Nobel Prize in Physics
-        authors:
-          - "Royal Swedish Academy of Sciences"
-        date: 1921-11-01
-        awarder: Royal Swedish Academy of Sciences
-        url: https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/
-        summary: The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'
+    Professional Experience:
+      - company: AI Biomedical
+        position: Mechanical & Software Engineering Intern
+        location: Tokyo, Japan
+        start_date: 2025-07
+        end_date: 2026-06
+        url: https://ai-biomedical.jp/en/
+        highlights:
+          - Contributed to mechanical system design and software engineering for AI-driven organ regeneration projects at a regenerative medicine AI startup.
 
-      - title: Max Planck Medal
+    # Generated from _bibliography/papers.bib by scripts/render_cv.py.
+    Preprints:
+      - title: "AIRoA MoMa Dataset: A Large-Scale Hierarchical Dataset for Mobile Manipulation"
         authors:
-          - "German Physical Society"
-        date: 2029
-        awarder: German Physical Society
-        summary: Awarded for outstanding scientific achievement
+          - Ryosuke Takanami
+          - Petr Khrapchenkov
+          - Shu Morikuni
+          - Jumpei Arima
+          - Yuta Takaba
+          - Shunsuke Maeda
+          - Takuya Okubo
+          - Genki Sano
+          - Satoshi Sekioka
+          - Aoi Kadoya
+          - Motonari Kambara
+          - Naoya Nishiura
+          - Haruto Suzuki
+          - Takanori Yoshimoto
+          - Koya Sakamoto
+          - Shinnosuke Ono
+          - Hu Yang
+          - Daichi Yashima
+          - Aoi Horo
+          - Tomohiro Motoda
+          - Kensuke Chiyoma
+          - Hiroshi Ito
+          - Koki Fukuda
+          - Akihito Goto
+          - Kazumi Morinaga
+          - Yuya Ikeda
+          - Riko Kawada
+          - Masaki Yoshikawa
+          - Norio Kosuge
+          - Yuki Noguchi
+          - Kei Ota
+          - Tatsuya Matsushima
+          - Yusuke Iwasawa
+          - Yutaka Matsuo
+          - Tetsuya Ogata
+        date: 2025
+        journal: arXiv:2509.25032 [cs.RO]
+        url: https://arxiv.org/abs/2509.25032
+    Honors and Awards:
+      - name: Silver Medal, 2nd International Olympiad in Artificial Intelligence
+        title: Silver Medal, 2nd International Olympiad in Artificial Intelligence
+        date: 2025
+        awarder: International Olympiad in Artificial Intelligence
+        url: https://ioai-official.org/
+        summary: Selected as a Japanese representative and placed 36th among 284 participants.
 
-    Publications:
-      - title: Zur Elektrodynamik bewegter Körper
-        authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1905-06-30
-        url: https://en.wikisource.org/wiki/Translation:On_the_Electrodynamics_of_Moving_Bodies
-        summary: It concerned an interpretation of the Michelson–Morley experiment and the properties of light and time. Special relativity incorporates the principle that the speed of light is the same for all inertial observers regardless of the state of motion of the source.
+      - name: Gold Medal, 1st Japan Olympiad in Artificial Intelligence Selection Round
+        title: Gold Medal, 1st Japan Olympiad in Artificial Intelligence Selection Round
+        date: 2025
+        awarder: Japan Olympiad in Artificial Intelligence
+        summary: Placed third in the selection round.
 
-      - title: Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt
-        authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1905-03-18
-        url: https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt
-        summary: In the second paper, he applied the quantum theory to light to explain the photoelectric effect. In particular, he used the idea of light quanta (photons) to explain experimental results, but stressed the importance of the experimental results. The importance of his work on the photoelectric effect earned him the Nobel Prize in Physics in 1921.
+      - name: Bronze Medal, 1st International Olympiad in Artificial Intelligence
+        title: Bronze Medal, 1st International Olympiad in Artificial Intelligence
+        date: 2024
+        awarder: International Olympiad in Artificial Intelligence
+        url: https://ioai-official.org/
+        summary: Selected as a Japanese representative; placed 17th among 42 teams in the practical round.
 
-      - title: Die Grundlage der allgemeinen Relativitätstheorie
-        authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1916-03-20
-        url: https://de.wikisource.org/wiki/Die_Grundlage_der_allgemeinen_Relativitätstheorie
-        summary: The publication of the theory of general relativity made him internationally famous. He was professor of physics at the universities of Zurich (1909–1911) and Prague (1911–1912), before he returned to ETH Zurich (1912–1914).
+      - name: First Place, National Junior Science Tournament
+        title: First Place, National Junior Science Tournament
+        date: 2021
+        url: https://koushien.jst.go.jp/koushien-Jr/
+        summary: Represented Tokyo and won first place nationally.
+
+    Presentations:
+      - bullet: Presented a poster at the Information Processing Society of Japan in March 2024 based on research conducted during the Tatsujin programme.
 
     Skills:
-      - name: Physics
-        level: Master
-        icon: fa-solid fa-hashtag
-        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
+      - bullet: "**Programming:** Python, C++"
+      - bullet: "**ML & Robotics:** PyTorch, ROS"
+      - bullet: "**Simulation:** NVIDIA Isaac Sim, Genesis"
+      - bullet: "**Robot Platforms:** Universal Robots UR5e, Toyota HSR, SO-101"
 
     Languages:
-      - name: German
-        summary: "Native speaker"
+      - label: Japanese
+        details: Native
+        name: Japanese
+        summary: Native
 
-      - name: English
-        summary: "Fluent"
-
-    Interests:
-      - name: Physics
-        icon: fa-solid fa-tag
-        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
-
-    Certificates:
-      - name: Machine Learning
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-location-dot
-
-      - name: Quantum Computing
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-tag
-
-      - name: Quantum Information
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-envelope
-
-    Projects:
-      - name: Quantum Computing
-        summary: Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.
-        highlights:
-          - Quantum Teleportation
-          - Quantum Cryptography
-        start_date: 2018-01-01
-        end_date: 2018-01-01
-
-    References:
-      - name: Professor John Doe
-        icon: fa-solid fa-laptop
-        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
-
-      - name: Professor Jane Smith
-        icon: fa-solid fa-thumbtack
-        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
+      - label: English
+        details: Working proficiency
+        name: English
+        summary: Working proficiency

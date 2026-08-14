@@ -28,9 +28,11 @@ latest_posts:
 ---
 
 I am an undergraduate student at Nanyang Technological University, College of Computing and Data Science, majoring in Data Science and Artificial Intelligence.
-I am currently a [Turing AI Scholars Programme](https://www.ntu.edu.sg/education/undergraduate-programme/turing-ai-scholars-programme) Scholar. 
+I am currently a [Turing AI Scholars Programme](https://www.ntu.edu.sg/education/undergraduate-programme/turing-ai-scholars-programme) Scholar.
 I am particularly interested in robotics and machine learning in the real world. My research focuses on developing intelligent systems that can perceive the physical world and act reliably and smoothly.
 
 Previously, I worked as a research intern at [OMRON SINIC X](https://www.omron.com/sinicx/en/), primarily mentored by [Dr. Mai Nishimura](https://denkiwakame.github.io/). I also worked as a student research assistant at [Matsuo-Iwasawa Lab](https://weblab.t.u-tokyo.ac.jp/en/) at the University of Tokyo, under [Prof. Tatsuya Matsushima](https://weblab.t.u-tokyo.ac.jp/en/member/tatsuya-matsushima/).
 
 I have represented Japan twice at the [International Olympiad in Artificial Intelligence (IOAI)](https://ioai-official.org/), and I won a silver medal in 2025 and a bronze medal in 2024.
+
+My CV is available [here]({{ '/cv/' | relative_url }}).

@@ -1,4 +1,6 @@
 nbconvert
 pyyaml
+bibtexparser==1.4.3
 rendercv[full]
+ruamel.yaml>=0.19.1,<0.20
 scholarly

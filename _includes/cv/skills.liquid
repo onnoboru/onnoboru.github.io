@@ -5,21 +5,21 @@
 <div class="card-text font-weight-light">
   {% for entry in entries %}
     <div class="skill-item">
-      {% if entry.icon %}
-        <i class="{{ entry.icon }}"></i>
-      {% endif %}
-      <strong>
-        {{- entry.name -}}
-        {%- if entry.level %} ({{ entry.level }}){% endif %}:</strong
-      >
-      {% if entry.keywords %}
-        {% for keyword in entry.keywords %}
-          {% if forloop.last %}
-            {{ keyword }}
-          {% else %}
-            {{ keyword }},
-          {% endif %}
-        {% endfor %}
+      {% if entry.bullet %}
+        <span>• {{ entry.bullet | markdownify | remove: '<p>' | remove: '</p>' }}</span>
+      {% else %}
+        {% if entry.icon %}
+          <i class="{{ entry.icon }}"></i>
+        {% endif %}
+        <strong>
+          {{- entry.name -}}
+          {%- if entry.level %} ({{ entry.level }}){% endif %}:</strong
+        >
+        {% if entry.keywords %}
+          {{ entry.keywords | join: ', ' }}
+        {% elsif entry.details %}
+          {{ entry.details }}
+        {% endif %}
       {% endif %}
     </div>
   {% endfor %}

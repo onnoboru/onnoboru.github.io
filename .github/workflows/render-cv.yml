@@ -6,6 +6,12 @@ on:
       - master
     paths:
       - "_data/cv.yml"
+      - "_bibliography/papers.bib"
+      - "_data/engineeringresumes/**"
+      - "scripts/render_cv.py"
+      - "scripts/check_cv.py"
+      - "pixi.toml"
+      - "pixi.lock"
       - "assets/rendercv/design.yaml"
       - "assets/rendercv/locale.yaml"
       - "assets/rendercv/settings.yaml"
@@ -19,31 +25,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: prefix-dev/setup-pixi@v0.10.0
         with:
-          python-version: "3.12"
-      - name: Install RenderCV
-        run: |
-          pip install -r requirements.txt
-      - name: RenderCV
-        run: |
-          cv_file=$(find _data  -maxdepth 1 -type f \( -name "cv.yaml" -o -name "cv.yml" \))
-          if [ -z "$cv_file" ]; then
-            echo "No cv.yml file found!"
-            exit 1
-          fi
-          rendercv_dir=$(find assets -maxdepth 1 -type d -name "rendercv")
-          if [ -z "$rendercv_dir" ]; then
-            echo "No RenderCV config directory found!"
-            exit 1
-          fi
-          settings=$(find $rendercv_dir -maxdepth 1 -type f \( -name "settings.yaml" -o -name "settings.yml" \))
-          if [ -z "$settings" ]; then
-            echo "Missing RenderCV config file!"
-            exit 1
-          fi
-          rendercv render $cv_file --settings $settings
-          rm assets/rendercv/rendercv_output/*.typ
+          pixi-version: v0.71.1
+          cache: true
+          frozen: true
+      - name: Render and check CV
+        run: pixi run check-cv
       - name: Upload rendercv_output as an artifact
         uses: actions/upload-artifact@v4
         with:
@@ -54,5 +42,9 @@ jobs:
           git config --global user.name "${{ github.actor }}"
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
           git add -A
-          git commit -m "chore: render the latest CV"
-          git push
+          if git diff --cached --quiet; then
+            echo "No CV changes to commit."
+          else
+            git commit -m "chore: render the latest CV"
+            git push
+          fi
