@@ -121,10 +121,10 @@
           class="more-authors"
           title="click to view {{ more_authors_hide }}"
           onclick="
-              var element = $(this);
-              element.attr('title', '');
-              var more_authors_text = element.text() == '{{ more_authors_hide }}' ? '{{ more_authors_show }}' : '{{ more_authors_hide }}';
-              element.html(more_authors_text);
+            var element = $(this);
+            element.attr('title', '');
+            var more_authors_text = element.text() == '{{ more_authors_hide }}' ? '{{ more_authors_show }}' : '{{ more_authors_hide }}';
+            element.html(more_authors_text);
           "
         >
           {{- more_authors_hide -}}
@@ -315,9 +315,11 @@
           {% endif %}
           {% if site.enable_publication_badges.google_scholar and entry_has_google_scholar_badge %}
             <a
-              href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user={{ site.data.socials.scholar_userid }}&citation_for_view={{
-                site.data.socials.scholar_userid
-              }}:{{ entry.google_scholar_id }}"
+              href="
+                https://scholar.google.com/citations?view_op=view_citation&hl=en&user={{ site.data.socials.scholar_userid }}&citation_for_view={{
+                  site.data.socials.scholar_userid
+                }}:{{ entry.google_scholar_id }}
+              "
               aria-label="Google Scholar link"
               role="button"
             >

@@ -13,7 +13,7 @@ footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
   Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
-keywords: Haruto Suzuki, NTU, Haruto, Suzuki, H.Suzuki, 鈴木, 温登, 鈴木温登, robotics, machine learning, artificial intelligence 
+keywords: Haruto Suzuki, NTU, Haruto, Suzuki, H.Suzuki, 鈴木, 温登, 鈴木温登, robotics, machine learning, artificial intelligence
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 default_lang: en
 languages: [en]
@@ -129,7 +129,6 @@ disqus_shortname: al-folio # put your disqus shortname
 # If you have blog posts published on medium.com or other external sources,
 # you can display them in your blog by adding a link to the RSS feed.
 # Optional: Set default categories and tags for posts from each source.
-
 
 # -----------------------------------------------------------------------------
 # Newsletter

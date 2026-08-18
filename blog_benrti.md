@@ -45,15 +45,16 @@ sequenceDiagram
     John-->>Alice: Great!
 ```
 
-
 redirect のやりかた
 
 ---
+
 layout: post
 title: a post with redirect
 date: 2022-02-01 17:39:00
 description: you can also redirect to assets like pdf
 redirect: /assets/pdf/example_pdf.pdf
+
 ---
 
 Redirecting to another page.
@@ -62,6 +63,7 @@ table を使いたい時
 pretty_table: true
 
 多分 dataset の中身とかを使う時に便利
+
 ## More Complex Example
 
 By using [Bootstrap Table](https://bootstrap-table.com/) it is possible to
@@ -121,9 +123,8 @@ jupyter notebook
 {% endif %}
 {:/nomarkdown}
 
+## custom のメッセージ、 warning とか
 
-custom のメッセージ、 warning とか
----
 layout: post
 title: a post with custom blockquotes
 date: 2023-05-12 15:53:00-0400
@@ -132,6 +133,7 @@ tags: formatting blockquotes
 categories: sample-posts
 giscus_comments: true
 related_posts: true
+
 ---
 
 This post shows how to add custom styles for blockquotes. Based on [jekyll-gitbook](https://github.com/sighingnow/jekyll-gitbook) implementation.
@@ -256,6 +258,7 @@ These custom styles can be used by adding the specific class to the blockquote, 
 <!-- prettier-ignore-end -->
 
 VIDEO
+
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         {% include video.liquid path="assets/video/pexels-engin-akyurt-6069112-960x540-30fps.mp4" class="img-fluid rounded z-depth-1" controls=true autoplay=true %}
@@ -282,6 +285,7 @@ It does also support embedding videos from different sources. Here are some exam
 related を表示させたい (自動) -> 普通に設定パートで related : True にする
 
 つけたほうがいい
+
 ```yml
 toc:
   sidebar: left
@@ -291,6 +295,7 @@ chart は e-charts や chart.js で作れる
 
 複数の選択肢の tab を作る
 tabs: true
+
 ---
 
 This is how a post with [tabs](https://github.com/Ovski4/jekyll-tabs) looks like. Note that the tabs could be used for different purposes, not only for code.
@@ -408,7 +413,8 @@ Hipster list
 
 グラフプロット
 chart:
-  plotly: true
+plotly: true
+
 ---
 
 This is an example post with some [plotly](https://plotly.com/javascript/) code.
