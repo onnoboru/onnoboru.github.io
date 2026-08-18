@@ -3,7 +3,7 @@ layout: page
 title: Weekend Builds
 permalink: /projects/
 lang: en
-description: A growing collection of your cool projects.
+description: Projects by Haruto Suzuki, including robotics, imitation learning, and machine learning systems.
 nav: true
 nav_order: 3
 display_categories: [work, fun]

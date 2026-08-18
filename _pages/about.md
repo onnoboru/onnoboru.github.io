@@ -2,6 +2,8 @@
 layout: about
 title: About
 permalink: /
+description: Haruto Suzuki is an NTU undergraduate and Turing AI Scholar interested in robotics, machine learning, and intelligent systems.
+keywords: Haruto Suzuki, NTU, Turing AI Scholars Programme, robotics, machine learning, artificial intelligence
 # subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
 
 profile:

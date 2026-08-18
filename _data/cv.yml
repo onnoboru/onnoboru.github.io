@@ -148,7 +148,7 @@ cv:
 
     Skills:
       - bullet: "**Programming:** Python, C++"
-      - bullet: "**ML & Robotics:** PyTorch, ROS"
+      - bullet: "**ML & Robotics:** PyTorch, ROS, scikit-learn"
       - bullet: "**Simulation:** NVIDIA Isaac Sim, Genesis"
       - bullet: "**Robot Platforms:** Universal Robots UR5e, Toyota HSR, SO-101"
 
