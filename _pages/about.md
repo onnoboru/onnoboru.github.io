@@ -29,7 +29,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am an undergraduate student at Nanyang Technological University, College of Computing and Data Science, majoring in Data Science and Artificial Intelligence.
+I'm Haruto Suzuki (Japanese name: 鈴木 温登), an undergraduate student at Nanyang Technological University, College of Computing and Data Science, majoring in Data Science and Artificial Intelligence.
 I am currently a [Turing AI Scholars Programme](https://www.ntu.edu.sg/education/undergraduate-programme/turing-ai-scholars-programme) Scholar.
 I am particularly interested in robotics and machine learning in the real world. My research focuses on developing intelligent systems that can perceive the physical world and act reliably and smoothly.
 
