@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Sync BibTeX preprints into RenderCV data and generate the CV PDF."""
+"""Sync BibTeX publications into RenderCV data and generate the CV PDF."""
 
 from __future__ import annotations
 
@@ -55,18 +55,62 @@ def display_name(bibtex_name: str) -> str:
     return " ".join(name_parts)
 
 
-def parse_preprints() -> list[dict[str, object]]:
-    """Convert BibTeX entries marked as preprints to RenderCV publications."""
+def load_bibliography() -> list[dict[str, str]]:
+    """Parse the repository bibliography into BibTeX entries."""
     parser = BibTexParser(common_strings=True)
     parser.customization = convert_to_unicode
     bibliography_source = remove_front_matter(
         BIBLIOGRAPHY_PATH.read_text(encoding="utf-8")
     )
     database = bibtexparser.loads(bibliography_source, parser=parser)
+    return database.entries
+
+
+def publication_from_entry(entry: dict[str, str]) -> dict[str, object]:
+    """Convert one BibTeX entry into a RenderCV publication entry."""
+    missing_fields = [field for field in ("title", "author", "year") if not entry.get(field)]
+    if missing_fields:
+        fields = ", ".join(missing_fields)
+        raise ValueError(f"BibTeX entry {entry.get('ID', '<unknown>')} is missing: {fields}")
+
+    authors = [
+        display_name(author.strip())
+        for author in re.split(r"\s+and\s+", entry["author"], flags=re.IGNORECASE)
+    ]
+    year = entry["year"]
+    publication_date: int | str = int(year) if year.isdigit() else year
+    publication: dict[str, object] = {
+        "title": DoubleQuotedScalarString(entry["title"]),
+        "authors": authors,
+        "date": publication_date,
+    }
+
+    venue = entry.get("journal") or entry.get("booktitle") or entry.get("publisher")
+    if venue:
+        publication["journal"] = venue
+
+    if entry.get("doi"):
+        publication["url"] = f"https://doi.org/{entry['doi']}"
+    elif entry.get("url"):
+        publication["url"] = entry["url"]
+
+    archive = entry.get("archiveprefix", "")
+    identifier = entry.get("eprint") or entry.get("arxiv")
+    primary_class = entry.get("primaryclass")
+    if archive.casefold() == "arxiv" and identifier:
+        suffix = f" [{primary_class}]" if primary_class else ""
+        publication["journal"] = f"arXiv:{identifier}{suffix}"
+        publication.setdefault("url", f"https://arxiv.org/abs/{identifier}")
+
+    return publication
+
+
+def parse_preprints(entries: list[dict[str, str]]) -> list[dict[str, object]]:
+    """Convert BibTeX entries marked as preprints to RenderCV publications."""
 
     entries = [
         entry
-        for entry in database.entries
+        for entry in entries
         if entry.get("additional_info", "").strip().casefold() == "preprint"
     ]
     entries.sort(
@@ -74,40 +118,7 @@ def parse_preprints() -> list[dict[str, object]]:
         reverse=True,
     )
 
-    preprints: list[dict[str, object]] = []
-    for entry in entries:
-        missing_fields = [field for field in ("title", "author", "year") if not entry.get(field)]
-        if missing_fields:
-            fields = ", ".join(missing_fields)
-            raise ValueError(f"BibTeX entry {entry.get('ID', '<unknown>')} is missing: {fields}")
-
-        authors = [
-            display_name(author.strip())
-            for author in re.split(r"\s+and\s+", entry["author"], flags=re.IGNORECASE)
-        ]
-        year = entry["year"]
-        publication_date: int | str = int(year) if year.isdigit() else year
-        preprint: dict[str, object] = {
-            "title": DoubleQuotedScalarString(entry["title"]),
-            "authors": authors,
-            "date": publication_date,
-        }
-
-        archive = entry.get("archiveprefix", "")
-        identifier = entry.get("eprint") or entry.get("arxiv")
-        primary_class = entry.get("primaryclass")
-        if archive.casefold() == "arxiv" and identifier:
-            suffix = f" [{primary_class}]" if primary_class else ""
-            preprint["journal"] = f"arXiv:{identifier}{suffix}"
-
-        if entry.get("doi"):
-            preprint["doi"] = entry["doi"]
-        elif entry.get("url"):
-            preprint["url"] = entry["url"]
-        elif identifier:
-            preprint["url"] = f"https://arxiv.org/abs/{identifier}"
-
-        preprints.append(preprint)
+    preprints = [publication_from_entry(entry) for entry in entries]
 
     if not preprints:
         raise ValueError(
@@ -117,8 +128,35 @@ def parse_preprints() -> list[dict[str, object]]:
     return preprints
 
 
-def sync_preprints() -> bool:
-    """Update the generated Preprints section while preserving the YAML formatting."""
+PUBLICATION_ENTRY_TYPES = {
+    "article",
+    "book",
+    "inbook",
+    "incollection",
+    "inproceedings",
+    "mastersthesis",
+    "phdthesis",
+    "techreport",
+}
+
+
+def parse_publications(entries: list[dict[str, str]]) -> list[dict[str, object]]:
+    """Convert non-preprint academic BibTeX entries to RenderCV publications."""
+    publication_entries = [
+        entry
+        for entry in entries
+        if entry.get("ENTRYTYPE", "").casefold() in PUBLICATION_ENTRY_TYPES
+        and entry.get("additional_info", "").strip().casefold() != "preprint"
+    ]
+    publication_entries.sort(
+        key=lambda entry: (entry.get("year", ""), entry.get("title", "")),
+        reverse=True,
+    )
+    return [publication_from_entry(entry) for entry in publication_entries]
+
+
+def sync_cv_sections() -> bool:
+    """Update generated publication sections while preserving YAML formatting."""
     yaml = YAML()
     yaml.preserve_quotes = True
     yaml.width = 4096
@@ -127,13 +165,20 @@ def sync_preprints() -> bool:
     original = CV_PATH.read_text(encoding="utf-8")
     cv_data = yaml.load(original)
     sections = cv_data["cv"]["sections"]
-    preprints = parse_preprints()
+    bibliography_entries = load_bibliography()
+    preprints = parse_preprints(bibliography_entries)
+    publications = parse_publications(bibliography_entries)
 
     if "Preprints" in sections:
         sections["Preprints"] = preprints
     else:
         research_index = list(sections).index("Research Experience")
         sections.insert(research_index + 1, "Preprints", preprints)
+
+    if publications:
+        sections["Publications"] = publications
+    elif "Publications" in sections:
+        del sections["Publications"]
 
     output = StringIO()
     yaml.dump(cv_data, output)
@@ -188,11 +233,11 @@ def main() -> None:
     )
     arguments = argument_parser.parse_args()
 
-    changed = sync_preprints()
+    changed = sync_cv_sections()
     message = (
-        "Synchronized BibTeX preprints."
+        "Synchronized BibTeX publications and preprints."
         if changed
-        else "BibTeX preprints are already synchronized."
+        else "BibTeX publications and preprints are already synchronized."
     )
     print(message, flush=True)
     if not arguments.sync_only:

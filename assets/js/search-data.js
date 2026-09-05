@@ -42,6 +42,11 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/announcement_20260709_en/";
+            },},{id: "news-a-co-authored-paper-accepted-to-corl-2026",
+          title: 'A Co-authored Paper Accepted to CoRL 2026',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/announcement_20260905_en/";
             },},{id: "projects-so-101-part-1",
           title: 'SO-101 (part 1)',
           description: "I built SO-101 arm.",

@@ -58,6 +58,9 @@ def main() -> None:
         publication["title"] for publication in cv["sections"].get("Preprints", [])
     )
     expected_text.extend(
+        publication["title"] for publication in cv["sections"].get("Publications", [])
+    )
+    expected_text.extend(
         entry["company"]
         for entries in cv["sections"].values()
         for entry in entries
@@ -71,6 +74,11 @@ def main() -> None:
     expected_urls.update(
         publication["url"].rstrip("/")
         for publication in cv["sections"].get("Preprints", [])
+        if publication.get("url")
+    )
+    expected_urls.update(
+        publication["url"].rstrip("/")
+        for publication in cv["sections"].get("Publications", [])
         if publication.get("url")
     )
     missing_urls = sorted(expected_urls - pdf_urls)
