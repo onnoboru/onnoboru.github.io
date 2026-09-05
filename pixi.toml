@@ -16,5 +16,5 @@ ruamel-yaml = ">=0.19.1,<0.20"
 
 [tasks]
 sync-cv = { cmd = "python scripts/render_cv.py --sync-only", description = "Synchronize BibTeX preprints into the RenderCV YAML" }
-render-cv = { cmd = "python scripts/render_cv.py", description = "Synchronize data and render the CV PDF" }
+render-cv = { cmd = "python scripts/render_cv.py", description = "Synchronize publications and render the CV PDF" }
 check-cv = { cmd = "python scripts/check_cv.py", depends-on = ["render-cv"], description = "Render and validate the CV PDF and its links" }

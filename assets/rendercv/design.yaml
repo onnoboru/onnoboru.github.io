@@ -4,13 +4,34 @@ design:
   page:
     size: a4
     show_footer: false
-    show_top_note: true
+    top_margin: 0.5in
+    bottom_margin: 0.5in
+    left_margin: 0.6in
+    right_margin: 0.6in
+    show_top_note: false
+  typography:
+    line_spacing: 0.45em
+    font_size:
+      body: 9pt
+      name: 23pt
+      headline: 9pt
+      connections: 9pt
   header:
-    space_below_connections: 0.5cm
+    space_below_connections: 0.25cm
     connections:
       show_icons: false
   sections:
     allow_page_break: false
+    space_between_regular_entries: 0.25cm
+    space_between_text_based_entries: 0.1cm
+  section_titles:
+    space_above: 0.3cm
+    space_below: 0.15cm
+  entries:
+    highlights:
+      space_above: 0.03cm
+      space_between_items: 0.03cm
+      space_between_bullet_and_text: 0.2em
   templates:
     education_entry:
       main_column: |-

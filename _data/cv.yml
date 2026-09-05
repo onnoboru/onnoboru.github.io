@@ -42,8 +42,8 @@ cv:
         end_date: 2026-07
         url: https://www.omron.com/sinicx/en/
         highlights:
-          - Investigated Vision-Language-Action models for robotic manipulation under the primary mentorship of [Dr. Mai Nishimura](https://denkiwakame.github.io/).
-          - Contributed to a manuscript arising from this work, currently under review.
+          - Investigated VLA models for robotic manipulation with [Dr. Mai Nishimura](https://denkiwakame.github.io/).
+          - Contributed to a related manuscript currently under review.
 
       - company: Matsuo-Iwasawa Laboratory, The University of Tokyo
         position: Student Research Assistant
@@ -52,8 +52,8 @@ cv:
         end_date: 2026-03
         url: https://weblab.t.u-tokyo.ac.jp/en/
         highlights:
-          - Conducted research on robot foundation models under the guidance of [Prof. Tatsuya Matsushima](https://weblab.t.u-tokyo.ac.jp/en/member/tatsuya-matsushima/) and [Dr. Takahiro Miki](https://takahiromiki.com/).
-          - Contributed to the [AIRoA MoMa Dataset preprint](https://arxiv.org/abs/2509.25032), working across dataset construction, model training, simulator development, experimental evaluation, and research subgroup management.
+          - Researched robot foundation models with [Prof. Tatsuya Matsushima](https://weblab.t.u-tokyo.ac.jp/en/member/tatsuya-matsushima/) and [Dr. Takahiro Miki](https://takahiromiki.com/).
+          - Contributed to the [AIRoA MoMa Dataset preprint](https://arxiv.org/abs/2509.25032) across data, training, simulation, and evaluation.
 
       - company: Experts in Information Science Program
         position: Fourth-generation Fellow
@@ -61,9 +61,22 @@ cv:
         end_date: 2024-03
         url: https://www.nii.ac.jp/tatsujin/en/
         highlights:
-          - Selected as a fourth-generation fellow in National Institute  of Informatics's elite research training program for high school students with exceptional abilities in informatics.
-          - Researched acceleration of fluid simulations using recurrent neural networks under the supervision of [Dr. Hiroshi Kajino](https://sites.google.com/site/hiroshikajino1989/home).
+          - Selected as a fourth-generation fellow in NII's elite informatics research program.
+          - Researched recurrent neural networks for accelerating fluid simulations with [Dr. Hiroshi Kajino](https://sites.google.com/site/hiroshikajino1989/home).
 
+    Publications:
+      - title: "CLAP: Direct VLM-to-VLA Adaptation via Language-Action Grounding"
+        authors:
+          - Yuri Ishitoya
+          - Jeremy Siburian
+          - Masashi Hamaya
+          - Haruto Suzuki
+          - Kuniaki Saito
+          - Toshihiko Fukushima
+          - Cristian C. Beltran-Hernandez
+          - Mai Nishimura
+        date: 2026
+        journal: 10th Annual Conference on Robot Learning
     Professional Experience:
       - company: AI Biomedical
         position: Mechanical & Software Engineering Intern
@@ -72,7 +85,7 @@ cv:
         end_date: 2026-06
         url: https://ai-biomedical.jp/en/
         highlights:
-          - Contributed to mechanical system design and software engineering for AI-driven organ regeneration projects at a regenerative medicine AI startup.
+          - Contributed to mechanical and software engineering for AI-driven organ printing at a regenerative medicine startup.
 
     # Generated from _bibliography/papers.bib by scripts/render_cv.py.
     Preprints:
@@ -114,8 +127,8 @@ cv:
           - Yutaka Matsuo
           - Tetsuya Ogata
         date: 2025
-        journal: arXiv:2509.25032 [cs.RO]
         url: https://arxiv.org/abs/2509.25032
+        journal: arXiv:2509.25032 [cs.RO]
     Honors and Awards:
       - name: Silver Medal, 2nd International Olympiad in Artificial Intelligence
         title: Silver Medal, 2nd International Olympiad in Artificial Intelligence
@@ -142,9 +155,6 @@ cv:
         date: 2021
         url: https://koushien.jst.go.jp/koushien-Jr/
         summary: Represented Tokyo and won first place nationally.
-
-    Presentations:
-      - bullet: Presented a poster at the Information Processing Society of Japan in March 2024 based on research conducted during the Tatsujin programme.
 
     Skills:
       - bullet: "**Programming:** Python, C++"
