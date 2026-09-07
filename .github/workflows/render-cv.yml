@@ -24,7 +24,7 @@ jobs:
     name: RenderCV
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: prefix-dev/setup-pixi@v0.10.0
         with:
           pixi-version: v0.71.1
@@ -33,7 +33,7 @@ jobs:
       - name: Render and check CV
         run: pixi run check-cv
       - name: Upload rendercv_output as an artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: RenderCV Output
           path: assets/rendercv/rendercv_output
