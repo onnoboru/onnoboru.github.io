@@ -18,9 +18,17 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0 # OR "2" -> To retrieve the preceding commit.
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 24
+
+      - name: Install Node.js dependencies
+        run: npm ci
 
       - name: Get changed files
         id: changed-files
@@ -40,6 +48,7 @@ jobs:
               continue
             fi
             ./gh-md-toc --indent 2 --insert --no-backup --hide-footer $file
+            npm exec -- prettier "$file" --write
           done
           rm gh-md-toc
 
