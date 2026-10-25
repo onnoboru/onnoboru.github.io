@@ -37,4 +37,4 @@ Previously, I worked as a research intern at [OMRON SINIC X](https://www.omron.c
 
 I have represented Japan twice at the [International Olympiad in Artificial Intelligence (IOAI)](https://ioai-official.org/), and I won a silver medal in 2025 and a bronze medal in 2024.
 
-My CV is available [here]({{ '/cv/' | relative_url }}).
+My CV is available [here]({{ site.data.socials.cv_pdf | relative_url }}).

@@ -1,0 +1,14 @@
+{% assign redirect_path = page.cv_pdf | default: site.data.socials.cv_pdf %}
+{% assign redirect_url = redirect_path | relative_url %}
+<!doctype html>
+<html lang="{{ site.lang | default: 'en' }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="refresh" content="0; url={{ redirect_url }}">
+    <meta name="robots" content="noindex">
+    <title>Redirecting to CV PDF</title>
+  </head>
+  <body>
+    <p>Redirecting to the <a href="{{ redirect_url }}">CV PDF</a>.</p>
+  </body>
+</html>

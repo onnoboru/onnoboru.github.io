@@ -69,9 +69,12 @@
 
       .title {
         font-weight: bolder;
+        font-size: 1.2rem;
       }
 
       .author {
+        font-size: 0.9rem;
+
         a {
           border-bottom: 1px dashed var(--global-theme-color);
 

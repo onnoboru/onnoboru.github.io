@@ -10,7 +10,7 @@ design:
     right_margin: 0.6in
     show_top_note: false
   typography:
-    line_spacing: 0.45em
+    line_spacing: 0.35em
     font_size:
       body: 9pt
       name: 23pt
@@ -22,10 +22,10 @@ design:
       show_icons: false
   sections:
     allow_page_break: false
-    space_between_regular_entries: 0.25cm
+    space_between_regular_entries: 0.2cm
     space_between_text_based_entries: 0.1cm
   section_titles:
-    space_above: 0.3cm
+    space_above: 0.4cm
     space_below: 0.15cm
   entries:
     highlights:

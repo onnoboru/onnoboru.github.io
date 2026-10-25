@@ -27,7 +27,7 @@ cv:
         start_date: 2023-04
         end_date: 2026-03
         highlights:
-          - Graduated with the Alumni Association Award (top honors).
+          - Alumni Association Award for outstanding achievements that brought distinction to the school.
 
     Academic Interests:
       - label: Research
@@ -43,7 +43,7 @@ cv:
         url: https://www.omron.com/sinicx/en/
         highlights:
           - Investigated VLA models for robotic manipulation with [Dr. Mai Nishimura](https://denkiwakame.github.io/).
-          - Contributed to a related manuscript currently under review.
+          - 'Contributed to "[CLAP: Direct VLM-to-VLA Adaptation via Language-Action Grounding](https://openreview.net/forum?id=GeENMbQXhi)", accepted to CoRL 2026.'
 
       - company: Matsuo-Iwasawa Laboratory, The University of Tokyo
         position: Student Research Assistant
@@ -56,12 +56,12 @@ cv:
           - Contributed to the [AIRoA MoMa Dataset preprint](https://arxiv.org/abs/2509.25032) across data, training, simulation, and evaluation.
 
       - company: Experts in Information Science Program
-        position: Fourth-generation Fellow
+        position: Fourth-cohort Fellow
         start_date: 2023-04
         end_date: 2024-03
         url: https://www.nii.ac.jp/tatsujin/en/
         highlights:
-          - Selected as a fourth-generation fellow in NII's elite informatics research program.
+          - Selected for the fourth cohort of NII's informatics research program.
           - Researched recurrent neural networks for accelerating fluid simulations with [Dr. Hiroshi Kajino](https://sites.google.com/site/hiroshikajino1989/home).
 
     Publications:
@@ -73,10 +73,11 @@ cv:
           - Haruto Suzuki
           - Kuniaki Saito
           - Toshihiko Fukushima
-          - Cristian C. Beltran-Hernandez
+          - Cristian Camilo Beltran-Hernandez
           - Mai Nishimura
         date: 2026
         journal: 10th Annual Conference on Robot Learning
+        url: https://openreview.net/forum?id=GeENMbQXhi
     Professional Experience:
       - company: AI Biomedical
         position: Mechanical & Software Engineering Intern
@@ -149,12 +150,6 @@ cv:
         awarder: International Olympiad in Artificial Intelligence
         url: https://ioai-official.org/
         summary: Selected as a Japanese representative; placed 17th among 42 teams in the practical round.
-
-      - name: First Place, National Junior Science Tournament
-        title: First Place, National Junior Science Tournament
-        date: 2021
-        url: https://koushien.jst.go.jp/koushien-Jr/
-        summary: Represented Tokyo and won first place nationally.
 
     Skills:
       - bullet: "**Programming:** Python, C++"
