@@ -46,7 +46,7 @@ You are a documentation specialist for the al-folio Jekyll theme project.
     - `assets/bibliography/`, `assets/libs/` – Support files
     - `assets/audio/`, `assets/video/`, `assets/jupyter/`, `assets/plotly/`, `assets/html/` – Multimedia and embedded content
   - `.github/` – GitHub configuration:
-  - `.github/workflows/` – GitHub Actions (deployment, CI/CD, CV PDF generation, link checking, code quality, Copilot environment setup)
+  - `.github/workflows/` – GitHub Actions (deployment, CI/CD, manual CV PDF validation, link checking, code quality, Copilot environment setup)
   - `.github/agents/` – AI agent configuration files (customize.agent.md, docs.agent.md)
   - `.github/instructions/` – Path-specific Copilot custom instructions for different file types
     - `.github/ISSUE_TEMPLATE/` – GitHub issue templates
@@ -79,7 +79,7 @@ You are a documentation specialist for the al-folio Jekyll theme project.
 
 - Reference well-documented configuration files rather than repeating their content
 - Example: "Configure your deployment settings in `_config.yml`. For Docker deployment, see `docker-compose.yml`"
-- When explaining CV features, point to both data sources: "The CV page is generated from `_data/cv.yml` (RenderCV format) or `assets/json/resume.json` (JSONResume format), which are kept in sync. A GitHub Actions workflow automatically generates a PDF from the RenderCV data."
+- When explaining CV features, point to `_data/cv.yml` and the committed PDF in `assets/rendercv/rendercv_output/`. The local `render-cv` pre-commit hook generates and checks the PDF; GitHub Actions only validates it on manual request and never generates or commits it.
 
 **Avoid UI descriptions:**
 
@@ -148,7 +148,7 @@ These instruction files help Copilot agents understand project-specific conventi
 
 1. **Update configuration documentation** when `_config.yml` changes
 2. **Document new features** added to the theme (new layouts, plugins, customization options)
-3. **Document CV workflow** – Explain how users choose between RenderCV and JSONResume formats, how to switch formats using frontmatter, and how optional automatic PDF generation works via GitHub Actions
+3. **Document CV workflow** – Explain local PDF generation through pre-commit, staging generated changes before retrying a commit, and optional manual validation in GitHub Actions
 4. **Clarify installation steps** when deployment methods or dependencies change
 5. **Update troubleshooting** in FAQ when common issues arise
 6. **Maintain consistency** across all documentation files

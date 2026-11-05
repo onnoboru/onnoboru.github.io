@@ -10,6 +10,21 @@ repos:
       - id: check-added-large-files
   - repo: local
     hooks:
+      - id: render-cv
+        name: Render and check CV locally
+        entry: pixi run check-cv
+        language: system
+        pass_filenames: false
+        stages: [pre-commit]
+        files: |
+          (?x)^(
+            _bibliography/papers\.bib |
+            _data/cv\.yml |
+            _data/engineeringresumes/.* |
+            assets/rendercv/.* |
+            scripts/(render_cv|check_cv)\.py |
+            pixi\.(toml|lock)
+          )$
       - id: prettier
         name: Check formatting with Prettier
         entry: npm exec -- prettier . --check

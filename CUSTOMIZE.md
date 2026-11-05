@@ -324,7 +324,7 @@ Your CV can be created using one of two formats. Choose the format that works be
 
 ### RenderCV Format (Recommended)
 
-[`_data/cv.yml`](_data/cv.yml) uses the [RenderCV](https://rendercv.com/) YAML format, which is human-readable and designed specifically for generating professional resumes. This format also enables optional automatic PDF generation via GitHub Actions.
+[`_data/cv.yml`](_data/cv.yml) uses the [RenderCV](https://rendercv.com/) YAML format. A local pre-commit hook generates and checks the PDF when CV inputs change.
 
 **If you choose this format:**
 
@@ -359,9 +359,18 @@ Change `rendercv` to `jsonresume` to display the JSONResume format instead.
 
 ### Automatic PDF Generation (RenderCV only)
 
-If you use the RenderCV format, a GitHub Actions workflow can automatically generate a PDF version of your CV whenever you push changes to [`_data/cv.yml`](_data/cv.yml). The PDF is saved to `assets/rendercv/rendercv_output/`.
+PDF generation runs on your computer before a commit, never on GitHub Actions. Install the hook once with `pixi run install-hooks`. When staged changes affect the CV, bibliography, design, or rendering scripts, the hook runs `pixi run check-cv` to synchronize publications, generate the PDF, and validate it.
 
-**To link the auto-generated PDF to your CV page:**
+If generation changes the CV YAML or PDF, pre-commit stops so you can review and stage the generated files before retrying:
+
+```bash
+git add _data/cv.yml assets/rendercv/rendercv_output/Haruto_Suzuki_CV.pdf
+git commit
+```
+
+You can also render explicitly with `pixi run check-cv`. The PDF is saved to `assets/rendercv/rendercv_output/`.
+
+**To link the PDF to your CV page:**
 
 Set the `cv_pdf` variable in the frontmatter of [`_pages/cv.md`](_pages/cv.md) to point to the generated PDF:
 
@@ -373,11 +382,9 @@ cv_format: rendercv
 ---
 ```
 
-This will add a download button on your CV page that links to the PDF. (The exact filename depends on your RenderCV settings—check the output directory after the first workflow run to see the generated PDF name.)
+The exact filename depends on your RenderCV settings. This site serves the committed PDF directly.
 
-**To disable automatic PDF generation:**
-
-Delete or comment out the [`.github/workflows/render-cv.yml`](.github/workflows/render-cv.yml) workflow file.
+The [`.github/workflows/render-cv.yml`](.github/workflows/render-cv.yml) workflow is manual-only and checks the committed PDF without regenerating or committing files. Markdown TOC updates are also manual-only, so pushing does not create automatic commits on `main`.
 
 ## Modifying the user and repository information
 

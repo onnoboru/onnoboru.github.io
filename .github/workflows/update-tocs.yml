@@ -1,13 +1,7 @@
 name: Update TOCs
-# This workflow automatically updates the Table of Contents (TOC) in markdown files
+# Run manually to update markdown TOCs without creating commits after each push.
 
 on:
-  push:
-    branches:
-      - main
-      - master
-    paths:
-      - "*.md"
   workflow_dispatch:
 
 permissions:

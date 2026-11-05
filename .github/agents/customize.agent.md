@@ -191,7 +191,7 @@ npx prettier . --write
 **Files:** `_data/cv.yml` (RenderCV format), `assets/json/resume.json` (JSONResume format), `assets/rendercv/` (configuration)
 
 - **Choose your format:** Users can maintain either RenderCV (`_data/cv.yml`) or JSONResume (`assets/json/resume.json`), or both simultaneously
-- **RenderCV (recommended):** Human-readable YAML format with automatic PDF generation via GitHub Actions, customizable styling via `assets/rendercv/` config files (`design.yaml`, `locale.yaml`, `settings.yaml`)
+- **RenderCV (recommended):** Human-readable YAML format with local PDF generation through the `render-cv` pre-commit hook and customizable styling via `assets/rendercv/` config files (`design.yaml`, `locale.yaml`, `settings.yaml`). GitHub Actions only checks the committed PDF on manual request; it never generates or commits the CV.
 - **JSONResume:** Standard JSON format compatible with other tools and services
 - **Using both formats:** Users can keep both files and switch which one displays using the `cv_format` frontmatter variable in `_pages/cv.md` (options: `rendercv` or `jsonresume`)
 - **Single format:** To use only one format, optionally delete the unused file (both are supported equally well)

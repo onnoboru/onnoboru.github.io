@@ -104,7 +104,7 @@ CV content in **RenderCV format** (recommended approach for generating professio
 
 **Usage:** Rendered by `cv.liquid` layout on CV page; displayed in `about.liquid` on home page.
 
-**Automatic PDF Generation:** When using RenderCV format, a GitHub Actions workflow (`render-cv.yml`) automatically generates a PDF version whenever you push changes to `_data/cv.yml`. The generated PDF is saved to `assets/rendercv/rendercv_output/` and can be linked via `cv_pdf` setting in `_config.yml`.
+**Local PDF Generation:** The `render-cv` pre-commit hook runs `pixi run check-cv` when CV inputs change. It synchronizes publications and generates the PDF locally in `assets/rendercv/rendercv_output/`. If generation changes `_data/cv.yml` or the PDF, stage those files and retry the commit. GitHub Actions never renders or commits the CV; `render-cv.yml` only validates the existing PDF when manually triggered.
 
 **Alternative Format (JSONResume):** For an alternative format, see `assets/json/resume.json` which uses the [JSONResume](https://jsonresume.org/) standard. Switch between formats using the `cv_format` frontmatter variable in `_pages/cv.md` (options: `rendercv` or `jsonresume`).
 

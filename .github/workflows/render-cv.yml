@@ -1,27 +1,12 @@
-name: Render a CV
+name: Check CV PDF (manual)
+# CV rendering runs locally through pre-commit, never in GitHub Actions.
 on:
-  push:
-    branches:
-      - main
-      - master
-    paths:
-      - "_data/cv.yml"
-      - "_bibliography/papers.bib"
-      - "_data/engineeringresumes/**"
-      - "scripts/render_cv.py"
-      - "scripts/check_cv.py"
-      - "pixi.toml"
-      - "pixi.lock"
-      - "assets/rendercv/design.yaml"
-      - "assets/rendercv/locale.yaml"
-      - "assets/rendercv/settings.yaml"
-  workflow_call:
   workflow_dispatch:
 permissions:
-  contents: write
+  contents: read
 jobs:
-  rendercv:
-    name: RenderCV
+  check-cv:
+    name: Check committed CV PDF
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
@@ -30,21 +15,5 @@ jobs:
           pixi-version: v0.71.1
           cache: true
           frozen: true
-      - name: Render and check CV
-        run: pixi run check-cv
-      - name: Upload rendercv_output as an artifact
-        uses: actions/upload-artifact@v5
-        with:
-          name: RenderCV Output
-          path: assets/rendercv/rendercv_output
-      - name: Push the changes
-        run: |
-          git config --global user.name "${{ github.actor }}"
-          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
-          git add -A
-          if git diff --cached --quiet; then
-            echo "No CV changes to commit."
-          else
-            git commit -m "chore: render the latest CV"
-            git push
-          fi
+      - name: Check existing PDF without regenerating it
+        run: pixi run python scripts/check_cv.py

@@ -139,7 +139,7 @@ When making changes:
 - **axe.yml** – Accessibility testing
 - **codeql.yml** – Security scanning
 - **update-citations.yml** – Automatic citation updates
-- **render-cv.yml** – CV rendering from RenderCV format
+- **render-cv.yml** – Manual validation of the committed CV PDF; rendering runs locally via the `render-cv` pre-commit hook
 
 ### Pre-commit Requirements
 
