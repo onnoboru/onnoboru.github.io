@@ -74,7 +74,7 @@ def publication_from_entry(entry: dict[str, str]) -> dict[str, object]:
         raise ValueError(f"BibTeX entry {entry.get('ID', '<unknown>')} is missing: {fields}")
 
     authors = [
-        display_name(author.strip())
+        display_name(author.strip()).replace("*", r"\*")
         for author in re.split(r"\s+and\s+", entry["author"], flags=re.IGNORECASE)
     ]
     year = entry["year"]
@@ -85,9 +85,17 @@ def publication_from_entry(entry: dict[str, str]) -> dict[str, object]:
         "date": publication_date,
     }
 
-    venue = entry.get("journal") or entry.get("booktitle") or entry.get("publisher")
+    venue = (
+        entry.get("journal")
+        or entry.get("booktitle")
+        or entry.get("howpublished")
+        or entry.get("publisher")
+    )
     if venue:
         publication["journal"] = venue
+
+    if entry.get("note"):
+        publication["summary"] = entry["note"].replace("*", r"\*")
 
     if entry.get("doi"):
         publication["url"] = f"https://doi.org/{entry['doi']}"
@@ -135,6 +143,7 @@ PUBLICATION_ENTRY_TYPES = {
     "incollection",
     "inproceedings",
     "mastersthesis",
+    "misc",
     "phdthesis",
     "techreport",
 }

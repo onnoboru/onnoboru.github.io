@@ -33,6 +33,12 @@ design:
       space_between_items: 0.03cm
       space_between_bullet_and_text: 0.2em
   templates:
+    publication_entry:
+      main_column: |-
+        **TITLE**
+        AUTHORS
+        SUMMARY
+        URL (JOURNAL)
     education_entry:
       main_column: |-
         **INSTITUTION**

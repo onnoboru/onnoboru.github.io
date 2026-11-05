@@ -49,7 +49,7 @@ ninja.data = [{
               window.location.href = "/news/announcement_20260905_en/";
             },},{id: "projects-so-101-part-1",
           title: 'SO-101 (part 1)',
-          description: "I built SO-101 arm.",
+          description: "A personal SO-101 robot arm setup for collecting demonstrations and experimenting with imitation learning and vision-language-action models.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
             },},{
