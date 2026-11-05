@@ -27,7 +27,7 @@ cv:
         start_date: 2023-04
         end_date: 2026-03
         highlights:
-          - Alumni Association Award for outstanding achievements that brought distinction to the school.
+          - Alumni Association Award for outstanding achievements.
 
     Academic Interests:
       - label: Research
@@ -42,8 +42,9 @@ cv:
         end_date: 2026-07
         url: https://www.omron.com/sinicx/en/
         highlights:
-          - Investigated VLA models for robotic manipulation with [Dr. Mai Nishimura](https://denkiwakame.github.io/).
-          - 'Contributed to "[CLAP: Direct VLM-to-VLA Adaptation via Language-Action Grounding](https://openreview.net/forum?id=GeENMbQXhi)", accepted to CoRL 2026.'
+          - Investigated VLM-to-VLA adaptation, primarily mentored by [Dr. Mai Nishimura](https://denkiwakame.github.io/).
+          - 'Contributed to "[CLAP: Direct VLM-to-VLA Adaptation via Language-Action Grounding](https://omron-sinicx.github.io/clap/)", accepted to CoRL 2026.'
+          - Co-first-authored paper accepted to the CoRL 2026 Workshop on Efficient Foundation Models for Real-Time Embodied AI.
 
       - company: Matsuo-Iwasawa Laboratory, The University of Tokyo
         position: Student Research Assistant
@@ -52,8 +53,8 @@ cv:
         end_date: 2026-03
         url: https://weblab.t.u-tokyo.ac.jp/en/
         highlights:
-          - Researched robot foundation models with [Prof. Tatsuya Matsushima](https://weblab.t.u-tokyo.ac.jp/en/member/tatsuya-matsushima/) and [Dr. Takahiro Miki](https://takahiromiki.com/).
-          - Contributed to the [AIRoA MoMa Dataset preprint](https://arxiv.org/abs/2509.25032) across data, training, simulation, and evaluation.
+          - Studied robot foundation models with [Prof. Tatsuya Matsushima](https://weblab.t.u-tokyo.ac.jp/en/member/tatsuya-matsushima/) and [Dr. Takahiro Miki](https://takahiromiki.com/).
+          - Contributed data, training, simulation, and evaluation to the [AIRoA MoMa Dataset](https://arxiv.org/abs/2509.25032).
 
       - company: Experts in Information Science Program
         position: Fourth-cohort Fellow
@@ -61,10 +62,22 @@ cv:
         end_date: 2024-03
         url: https://www.nii.ac.jp/tatsujin/en/
         highlights:
-          - Selected for the fourth cohort of NII's informatics research program.
-          - Researched recurrent neural networks for accelerating fluid simulations with [Dr. Hiroshi Kajino](https://sites.google.com/site/hiroshikajino1989/home).
+          - Studied RNNs for faster fluid simulation with [Dr. Hiroshi Kajino](https://sites.google.com/site/hiroshikajino1989/home).
 
     Publications:
+      - title: "Lost in Translation? Democratizing VLAs through Language-Anchored VLM-to-VLA Adaptation"
+        authors:
+          - Yuri Ishitoya\*
+          - Haruto Suzuki\*
+          - Jeremy Siburian\*
+          - Masashi Hamaya
+          - Kuniaki Saito
+          - Toshihiko Fukushima
+          - Cristian Camilo Beltran-Hernandez
+          - Mai Nishimura\*
+        date: 2026
+        journal: CoRL 2026 Workshop on Efficient Foundation Models for Real-Time Embodied AI (non-archival)
+        summary: \* Equal contribution.
       - title: "CLAP: Direct VLM-to-VLA Adaptation via Language-Action Grounding"
         authors:
           - Yuri Ishitoya
@@ -86,7 +99,7 @@ cv:
         end_date: 2026-06
         url: https://ai-biomedical.jp/en/
         highlights:
-          - Contributed to mechanical and software engineering for AI-driven organ printing at a regenerative medicine startup.
+          - Contributed to hardware and software for AI-driven organ printing.
 
     # Generated from _bibliography/papers.bib by scripts/render_cv.py.
     Preprints:
@@ -136,34 +149,22 @@ cv:
         date: 2025
         awarder: International Olympiad in Artificial Intelligence
         url: https://ioai-official.org/
-        summary: Selected as a Japanese representative and placed 36th among 284 participants.
+        summary: Japan representative; 36th among 284 participants.
 
       - name: Gold Medal, 1st Japan Olympiad in Artificial Intelligence Selection Round
         title: Gold Medal, 1st Japan Olympiad in Artificial Intelligence Selection Round
         date: 2025
         awarder: Japan Olympiad in Artificial Intelligence
-        summary: Placed third in the selection round.
+        summary: Third place in the selection round.
 
       - name: Bronze Medal, 1st International Olympiad in Artificial Intelligence
         title: Bronze Medal, 1st International Olympiad in Artificial Intelligence
         date: 2024
         awarder: International Olympiad in Artificial Intelligence
         url: https://ioai-official.org/
-        summary: Selected as a Japanese representative; placed 17th among 42 teams in the practical round.
+        summary: Japan representative; 17th among 42 teams in the practical round.
 
-    Skills:
-      - bullet: "**Programming:** Python, C++"
-      - bullet: "**ML & Robotics:** PyTorch, ROS, scikit-learn"
-      - bullet: "**Simulation:** NVIDIA Isaac Sim, Genesis"
-      - bullet: "**Robot Platforms:** Universal Robots UR5e, Toyota HSR, SO-101"
-
-    Languages:
-      - label: Japanese
-        details: Native
-        name: Japanese
-        summary: Native
-
-      - label: English
-        details: Working proficiency
-        name: English
-        summary: Working proficiency
+    Skills and Languages:
+      - bullet: "**Programming & ML:** Python, C++, PyTorch, ROS, scikit-learn"
+      - bullet: "**Robotics:** NVIDIA Isaac Sim, Genesis; Universal Robots UR5e, Toyota HSR, SO-101"
+      - bullet: "**Languages:** Japanese (native), English (working proficiency)"

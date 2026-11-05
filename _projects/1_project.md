@@ -1,7 +1,7 @@
 ---
 layout: page
 title: SO-101 (part 1)
-description: I built SO-101 arm.
+description: A personal SO-101 robot arm setup for collecting demonstrations and experimenting with imitation learning and vision-language-action models.
 img: assets/img/project1_so101.jpg
 importance: 1
 category: fun
@@ -14,4 +14,4 @@ To support future data collection and robot learning experiments, I also prepare
 
 The goal is to have a personal setup for collecting data and experimenting with robot learning and VLA models outside the lab.
 
-<img src="/assets/img/project1_so101.jpg" width="50%">
+<img src="/assets/img/project1_so101.jpg" alt="SO-101 robot arm assembled for imitation learning experiments" width="50%">

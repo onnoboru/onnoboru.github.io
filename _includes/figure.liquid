@@ -18,7 +18,7 @@
         <source
           class="responsive-img-srcset"
           {% if ext == 'gif' or ext == 'jpeg' or ext == 'jpg' or ext == 'png' or ext == 'tiff' %}
-            srcset="{% for i in site.imagemagick.widths %}{{ img_path | relative_url }}-{{ i }}.webp {{ i }}w,{% endfor %}"
+            srcset="{% for i in site.imagemagick.widths %}{{ img_path | relative_url }}-{{ i }}.webp {{ i }}w{% unless forloop.last %},{% endunless %}{% endfor %}"
             type="image/webp"
           {% else %}
             srcset="{{ include.path | relative_url }}"
@@ -38,16 +38,14 @@
       {% endif %}
       {% if include.width %}
         width="{{ include.width }}"
-      {% else %}
-        width="100%"
       {% endif %}
       {% if include.height %}
         height="{{ include.height }}"
-      {% else %}
-        height="auto"
       {% endif %}
-      {% if include['min-width'] or include['min-height'] or include['max-width'] or include['max-height'] %}
-        style="
+      style="
+        {% unless include.width %}width: 100%;{% endunless %}
+        {% unless include.height %}height: auto;{% endunless %}
+        {% if include['min-width'] or include['min-height'] or include['max-width'] or include['max-height'] %}
           {% if include['min-width'] %}
             min-width: {{ include.min-width }};
           {% endif %}
@@ -60,8 +58,8 @@
           {% if include['max-height'] %}
             max-height: {{ include.max-height }};
           {% endif %}
-        "
-      {% endif %}
+        {% endif %}
+      "
       {% if include.alt %}
         alt="{{ include.alt }}"
       {% endif %}

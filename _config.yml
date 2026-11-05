@@ -8,7 +8,7 @@ last_name: Suzuki
 contact_note: >
   You can even add a little note about which of these is the best way to reach you.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Haruto Suzuki is an undergraduate student at Nanyang Technological University studying Data Science and Artificial Intelligence, with interests in robotics, machine learning, and intelligent systems.
+  Haruto Suzuki is an NTU Data Science and AI undergraduate, Turing AI Scholar, and 2x IOAI medalist researching robotics and machine learning.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
@@ -92,8 +92,8 @@ bing_site_verification: # Bing Webmaster verification ID
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: al-folio # blog_name will be displayed in your blog page
-blog_description: a simple whitespace theme for academics
+blog_name: Haruto Suzuki's Blog # blog_name will be displayed in your blog page
+blog_description: Research notes and updates on robotics, machine learning, and intelligent systems.
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
 
@@ -238,7 +238,9 @@ sass:
 
 jekyll-minifier:
   compress_javascript: false # set to false since we are using terser as the js minifier
-  exclude: ["robots.txt", "assets/js/search/*.js"]
+  # The HTML compressor rewrites HTML5 void elements and injects a legacy charset meta tag.
+  # Keep generated HTML intact; CSS and JavaScript assets are still minified.
+  exclude: ["robots.txt", "assets/js/search/*.js", "*.html", "**/*.html"]
 
 # -----------------------------------------------------------------------------
 # Terser
@@ -298,7 +300,7 @@ scholar:
 # Customize badge behavior in _layouts/bib.liquid
 enable_publication_badges:
   altmetric: true # Altmetric badge (Customization options: https://badge-docs.altmetric.com/index.html)
-  dimensions: true # Dimensions badge (Customization options: https://badge.dimensions.ai/)
+  dimensions: false # Dimensions.ai blocks crawlers in robots.txt; no entries currently use this badge
   google_scholar: true # Google Scholar badge (https://scholar.google.com/intl/en/scholar/citations.html)
   inspirehep: true # Inspire HEP badge (https://help.inspirehep.net/knowledge-base/citation-metrics/)
 
@@ -447,7 +449,7 @@ third_party_libraries:
     version: "5.5.0"
   google_fonts:
     url:
-      fonts: "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&display=swap"
+      fonts: "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700%7CRoboto+Slab:100,300,400,500,700%7CMaterial+Icons&display=swap"
   highlightjs:
     integrity:
       css:

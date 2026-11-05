@@ -2,13 +2,14 @@
 layout: about
 title: About
 permalink: /
-description: Haruto Suzuki is an NTU undergraduate and Turing AI Scholar interested in robotics, machine learning, and intelligent systems.
-keywords: Haruto Suzuki, NTU, Turing AI Scholars Programme, robotics, machine learning, artificial intelligence
+description: Haruto Suzuki studies Data Science and Artificial Intelligence at NTU as a Turing AI Scholar. He do research on robotics and machine learning. He represented Japan twice at IOAI and won a silver and a bronze medal.
+keywords: Haruto Suzuki, NTU, Turing AI Scholars Programme, IOAI, robotics, machine learning, artificial intelligence
 # subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
 
 profile:
   align: right
   image: prof_pic.jpg
+  image_alt: Portrait of Haruto Suzuki
   image_circular: false # crops the image to make it circular
   more_info: >
     <!-- <p>555 your office number</p>

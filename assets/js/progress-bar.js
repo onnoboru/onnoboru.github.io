@@ -48,7 +48,6 @@ function getCurrentScrollPosition() {
 function initializeProgressElement() {
   let navbarHeight = $("#navbar").outerHeight(true);
   $("body").css({ "padding-top": navbarHeight });
-  $("progress-container").css({ "padding-top": navbarHeight });
   progressBar.css({ top: navbarHeight });
   progressBar.attr({
     max: getDistanceToScroll(),
@@ -65,7 +64,7 @@ function getDistanceToScroll() {
 }
 
 function resizeProgressBar() {
-  progressBar.css({ width: getWidthPercentage() + "%" });
+  progressBar.find(".progress-bar").css({ width: getWidthPercentage() + "%" });
 }
 // The scroll ratio equals the percentage to resize the bar
 function getWidthPercentage() {
